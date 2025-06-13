@@ -414,9 +414,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BUS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="bin\Debug\imguser.png" />
     <None Include="bin\Debug\imgkey.png" />
@@ -467,6 +465,7 @@
     <None Include="Resources\TimKiem_XoaPhong.jpg" />
     <None Include="Resources\Remove-TimKiem.png" />
     <None Include="Resources\calculator.png" />
+    <Content Include="BUS\DB.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
