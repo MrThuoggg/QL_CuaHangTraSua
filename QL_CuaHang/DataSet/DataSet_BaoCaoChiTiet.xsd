@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_BaoCaoChiTiet" targetNamespace="http://tempuri.org/DataSet_BaoCaoChiTiet.xsd" xmlns:mstns="http://tempuri.org/DataSet_BaoCaoChiTiet.xsd" xmlns="http://tempuri.org/DataSet_BaoCaoChiTiet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_BaoCaoChiTiet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_BaoCaoChiTiet" msprop:Generator_DataSetName="DataSet_BaoCaoChiTiet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BaoCaoChiTiet" msprop:Generator_RowEvHandlerName="BaoCaoChiTietRowChangeEventHandler" msprop:Generator_RowDeletedName="BaoCaoChiTietRowDeleted" msprop:Generator_RowDeletingName="BaoCaoChiTietRowDeleting" msprop:Generator_RowEvArgName="BaoCaoChiTietRowChangeEvent" msprop:Generator_TablePropName="BaoCaoChiTiet" msprop:Generator_RowChangedName="BaoCaoChiTietRowChanged" msprop:Generator_RowChangingName="BaoCaoChiTietRowChanging" msprop:Generator_TableClassName="BaoCaoChiTietDataTable" msprop:Generator_RowClassName="BaoCaoChiTietRow" msprop:Generator_TableVarName="tableBaoCaoChiTiet" msprop:Generator_UserTableName="BaoCaoChiTiet">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaHoaDon" msprop:Generator_ColumnPropNameInRow="MaHoaDon" msprop:Generator_ColumnPropNameInTable="MaHoaDonColumn" msprop:Generator_ColumnVarNameInTable="columnMaHoaDon" msprop:Generator_UserColumnName="MaHoaDon" type="xs:string" minOccurs="0" />
+              <xs:element name="TenTraSua" msprop:Generator_ColumnPropNameInRow="TenTraSua" msprop:Generator_ColumnPropNameInTable="TenTraSuaColumn" msprop:Generator_ColumnVarNameInTable="columnTenTraSua" msprop:Generator_UserColumnName="TenTraSua" type="xs:string" minOccurs="0" />
+              <xs:element name="MaLoaiTra" msprop:Generator_ColumnPropNameInRow="MaLoaiTra" msprop:Generator_ColumnPropNameInTable="MaLoaiTraColumn" msprop:Generator_ColumnVarNameInTable="columnMaLoaiTra" msprop:Generator_UserColumnName="MaLoaiTra" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_UserColumnName="ThanhTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DanhSachTopping" msprop:Generator_ColumnPropNameInRow="DanhSachTopping" msprop:Generator_ColumnPropNameInTable="DanhSachToppingColumn" msprop:Generator_ColumnVarNameInTable="columnDanhSachTopping" msprop:Generator_UserColumnName="DanhSachTopping" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
