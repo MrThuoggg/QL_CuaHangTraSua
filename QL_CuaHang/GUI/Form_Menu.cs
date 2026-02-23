@@ -125,6 +125,8 @@ namespace QL_CuaHang.GUI
             dgdanhsachtrasua.Columns[1].Frozen = true;
             dgdanhsachtrasua.Columns[2].Frozen = true;
         }
+
+        // hàm tính tổng tiền
         private void UpdateTongTien()
         {
             decimal tongTien = 0;
@@ -146,6 +148,8 @@ namespace QL_CuaHang.GUI
             txttongtien1.Text = tongTien.ToString("N0") + " VND";
         }
 
+
+        // Button thêm sản phẩm
         private void btthem_Click(object sender, EventArgs e)
         {
             if (dgdanhsachtrasua.CurrentRow != null && dgdanhsachtopping.CurrentRow != null)
@@ -196,32 +200,76 @@ namespace QL_CuaHang.GUI
             this.Close();
         }
 
+
+        // Button in hóa đơn
         private void btinHoaDon_Click(object sender, EventArgs e)
         {
-            //tạo ra 1 mã hoá đơn mới
-            int maHoaDon = MenuDAO.LayMaHoaDonMoiNhat();
-
-            // lấy dữ liệu ra từ datagridvew
-            foreach (DataGridViewRow row in dgOrder.Rows)
+            if (dgOrder.Rows.Count <= 1)
             {
-                if (!row.IsNewRow)
-                {
-                    string tenTraSua = row.Cells["TenTraSua"].Value?.ToString() ?? "";
-                    string tenTopping = row.Cells["Topping"].Value?.ToString() ?? "";
-                    int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value ?? 0);
-                    decimal giaTraSua = Convert.ToDecimal(row.Cells["GiaTraSua"].Value ?? 0);
-                    decimal giaTopping = Convert.ToDecimal(row.Cells["GiaTopping"].Value ?? 0);
-                    decimal tongGia = Convert.ToDecimal(row.Cells["TongGia"].Value ?? 0);   
-                    MenuDAO.ThemChiTietHoaDon(maHoaDon, tenTraSua, tenTopping, soLuong, giaTraSua, giaTopping, tongGia);
-                }
+                MessageBox.Show("Chưa có sản phẩm nào để in hóa đơn!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            try
+            {
+                // Tính tổng tiền
+                decimal tongTien = 0;
+                foreach (DataGridViewRow row in dgOrder.Rows)
+                {
+                    if (!row.IsNewRow && row.Cells["TongGia"].Value != null)
+                    {
+                        tongTien += Convert.ToDecimal(row.Cells["TongGia"].Value);
+                    }
+                }
 
 
-            // Gọi cái form report
-            Form_BaoCaoHoaDon frmBaoCaoHoaDon = new Form_BaoCaoHoaDon(maHoaDon);
-            frmBaoCaoHoaDon.Show();
+                // tạo hóa đơn mới 
+                string sqlInsertHoaDon = @"
+            INSERT INTO HoaDon (NgayLap, TongTien)
+            VALUES (CURDATE(), @TongTien);
+            SELECT LAST_INSERT_ID();";
+
+                object result = KetNoiCSDL.ThucThiTruyVanLayGiaTri(sqlInsertHoaDon,
+                    "@TongTien", tongTien);
+
+                if (result == null || result == DBNull.Value)
+                {
+                    MessageBox.Show("Không thể tạo hóa đơn mới!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int maHoaDonMoi = Convert.ToInt32(result);
+                if (tongTien <= 0)
+                {
+                    MessageBox.Show("Tổng tiền không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // lấy dữ liệu ra từ datagridvew
+                foreach (DataGridViewRow row in dgOrder.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        string tenTraSua = row.Cells["TenTraSua"].Value?.ToString() ?? "";
+                        string tenTopping = row.Cells["Topping"].Value?.ToString() ?? "";
+                        int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value ?? 0);
+                        decimal giaTraSua = Convert.ToDecimal(row.Cells["GiaTraSua"].Value ?? 0);
+                        decimal giaTopping = Convert.ToDecimal(row.Cells["GiaTopping"].Value ?? 0);
+
+                        MenuDAO.ThemChiTietHoaDon(maHoaDonMoi, tenTraSua, tenTopping, soLuong, giaTraSua, giaTopping);
+                    }
+                }
 
 
+                // Gọi cái form report
+                Form_BaoCaoHoaDon frmBaoCaoHoaDon = new Form_BaoCaoHoaDon(maHoaDonMoi);
+                frmBaoCaoHoaDon.Show();
+                dgOrder.Rows.Clear();
+                UpdateTongTien();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -229,6 +277,7 @@ namespace QL_CuaHang.GUI
 
         }
 
+        // xóa sản phẩm
         private void btxoa_Click(object sender, EventArgs e)
         {
             

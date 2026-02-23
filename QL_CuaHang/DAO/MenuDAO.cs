@@ -60,7 +60,6 @@ namespace QL_CuaHang.DAO
             string sql = @"SELECT hd.MaHoaDon AS Ma_Hoa_Don, 
                    DATE_FORMAT(hd.NgayLap, '%d/%m/%Y') AS Ngay_Lap,
                    FORMAT(hd.TongTien, 0) AS Tong_Tien,
-                   COALESCE(hd.TenKhachHang, kh.TenKH) AS Ten_Khach_Hang,
                    GROUP_CONCAT(CONCAT(t.TenTraSua, ' (SL: ', ct.SoLuong, ')', 
                        IFNULL(CONCAT(' - Topping: ',
                        (SELECT GROUP_CONCAT(TenTopping SEPARATOR ', ') 
@@ -69,33 +68,28 @@ namespace QL_CuaHang.DAO
                    ORDER BY ct.ID SEPARATOR '\n') AS Chi_Tiet_Don_Hang,
                    FORMAT(SUM(ct.ThanhTien), 0) AS Thanh_Tien
                    FROM HoaDon hd
-                   LEFT JOIN KhachHang kh ON hd.MaKH = kh.MaKH
                    LEFT JOIN ChiTietHoaDon ct ON hd.MaHoaDon = ct.MaHoaDon
                    LEFT JOIN TraSua t ON ct.MaTraSua = t.MaTraSua
-                   GROUP BY hd.MaHoaDon, hd.NgayLap, hd.TongTien, 
-                            COALESCE(hd.TenKhachHang, kh.TenKH)
+                   GROUP BY hd.MaHoaDon, hd.NgayLap, hd.TongTien
                    ORDER BY hd.NgayLap DESC, hd.MaHoaDon";
             DataTable dt = new DataTable();
             dt = KetNoiCSDL.DocDuLieu(sql);
             return dt;
         }
 
-
-        public static DataTable ThongTinKhachHang()
+        public static DataTable ThongTinNguyenLieu()
         {
             string sql = @"
-    SELECT 
-        hd.MaHoaDon AS 'Mã HD', 
-        CASE 
-            WHEN hd.TenKhachHang IS NULL THEN kh.TenKH 
-            ELSE hd.TenKhachHang 
-        END AS 'Tên Khách Hàng',
-        DATE_FORMAT(hd.NgayLap, '%d/%m/%Y') AS 'Ngày Lập', 
-        TRIM(TRAILING '.00' FROM FORMAT(hd.TongTien, 2)) AS 'Tổng Tiền'
-    FROM HoaDon hd
-    LEFT JOIN KhachHang kh ON hd.MaKH = kh.MaKH
-    ORDER BY hd.NgayLap DESC, hd.MaHoaDon;
-";
+                        SELECT 
+                            MaNguyenLieu, 
+                            TenNguyenLieu, 
+                            DonViTinh, 
+                            FORMAT(GiaNhap, 0) AS GiaNhap, 
+                            TonKho, 
+                            TonKhoToiThieu,
+                            IF(TonKho <= TonKhoToiThieu, 'Cảnh báo', 'Bình thường') AS TrangThai
+                        FROM NguyenLieu
+                        ORDER BY TenNguyenLieu";
             DataTable dt = new DataTable();
             dt = KetNoiCSDL.DocDuLieu(sql);
             return dt;
@@ -109,22 +103,29 @@ namespace QL_CuaHang.DAO
             return dt;
         }
 
-        // Phần code của UC Đơn hàng
+
+        // Phần code của UC Quản lý Đơn hàng
         public static void XoaDonHang(string maHoaDon)
         {
-            string sqlChiTietHoaDon = $"DELETE FROM ChiTietHoaDon WHERE MaHoaDon = '{maHoaDon}'";
-            KetNoiCSDL.ThucThiTruyVan(sqlChiTietHoaDon);
-            string sqlHoaDon = $"DELETE FROM HoaDon WHERE MaHoaDon = '{maHoaDon}'";
-            KetNoiCSDL.ThucThiTruyVan(sqlHoaDon);
+
+            string sqlChiTietHoaDon = "DELETE FROM ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon";
+            KetNoiCSDL.ThucThiTruyVan(sqlChiTietHoaDon, "@MaHoaDon", maHoaDon);
+
+            string sqlHoaDon = "DELETE FROM HoaDon WHERE MaHoaDon = @MaHoaDon";
+            KetNoiCSDL.ThucThiTruyVan(sqlHoaDon, "@MaHoaDon", maHoaDon);
         }
 
-        public static void CapNhatDonHang(string maHoaDon, string tenKhachHang, DateTime ngayMua)
+
+        public static void CapNhatDonHang(string maHoaDon, DateTime ngayMua)
         {
-            string sql = $"UPDATE HoaDon SET TenKhachHang = '{tenKhachHang}', NgayLap = '{ngayMua:yyyy-MM-dd}' WHERE MaHoaDon = '{maHoaDon}'";
-            KetNoiCSDL.ThucThiTruyVan(sql);
+            //sau khi sửa lỗi
+            string sql = "UPDATE HoaDon SET NgayLap = @NgayLap WHERE MaHoaDon = @MaHoaDon";
+            KetNoiCSDL.ThucThiTruyVan(sql,
+                "@NgayLap", ngayMua,
+                "@MaHoaDon", maHoaDon?.Trim());
         }
 
-        //tìm kiếm đơn hàng
+
         public static DataTable TimKiemHoaDonTheoMa(string maHoaDon)
         {
             if (string.IsNullOrWhiteSpace(maHoaDon))
@@ -156,7 +157,7 @@ namespace QL_CuaHang.DAO
 
 
 
-        // Phần code của UC Nhân viên
+        // Phần code của UC Quản lý Nhân viên
         public static DataTable IDNhanVienLonNhat()
         {
             string sql = "SELECT max(ID) As MaxIDNhanVien FROM nhanvien";
@@ -172,28 +173,30 @@ namespace QL_CuaHang.DAO
             return dt;
         }
 
-        //tìm kiếm
         public static DataTable TimKiemNhanVienTheoID(string id)
         {
+
+
+            // sau khi sửa lỗi
+            if (!int.TryParse(id, out int idInt))
+            {
+                return new DataTable();
+            }
+
             string sql = @"
-    SELECT 
-        nv.ID AS ID, 
-        nv.TenNhanVien AS Tên, 
-        nv.ChucVu AS Chức_Vụ, 
-        FORMAT(ln.LuongCoBan, 0) AS Lương 
-    FROM 
-        NhanVien nv 
-    JOIN 
-        LuongNhanVien ln 
-    ON 
-        nv.ID = ln.IDNhanVien
-    WHERE 
-        nv.ID = '" + id + @"'";
+        SELECT 
+            nv.ID AS ID, 
+            nv.TenNhanVien AS Tên, 
+            nv.ChucVu AS Chức_Vụ, 
+            FORMAT(ln.LuongCoBan, 0) AS Lương 
+        FROM 
+            NhanVien nv 
+        JOIN 
+            LuongNhanVien ln ON nv.ID = ln.IDNhanVien
+        WHERE nv.ID = @ID";
 
-            DataTable dt = KetNoiCSDL.DocDuLieu(sql);
-            return dt;
+            return KetNoiCSDL.DocDuLieu(sql, "@ID", idInt);
         }
-
 
         public static DataTable ThongTinChucVuNhanVien()
         {
@@ -203,7 +206,6 @@ namespace QL_CuaHang.DAO
             return dt;
         }
 
-        //thêm
         public static void ThemNhanVien(int id, string tenNhanVien, string chucVu, decimal luongCoBan)
         {
             string sqlNhanVien = "INSERT INTO NhanVien (TenNhanVien, ChucVu) VALUES (@TenNhanVien, @ChucVu)";
@@ -213,7 +215,6 @@ namespace QL_CuaHang.DAO
             KetNoiCSDL.ThucThiTruyVan(sqlLuong, "@IDNhanVien", id, "@LuongCoBan", luongCoBan);
         }
 
-        //cập nhật
         public static void CapNhatNhanVien(int id, string tenNhanVien, string chucVu, decimal luongCoBan)
         {
             string sqlNhanVien = "UPDATE NhanVien SET TenNhanVien = @TenNhanVien, ChucVu = @ChucVu WHERE ID = @ID";
@@ -224,7 +225,6 @@ namespace QL_CuaHang.DAO
             KetNoiCSDL.ThucThiTruyVan(sqlLuong, "@LuongCoBan", luongCoBan, "@ID", id);
         }
 
-        //xóa
         public static void XoaNhanVien(int id)
         {
             string sqlLuong = "DELETE FROM LuongNhanVien WHERE IDNhanVien = @ID";
@@ -239,7 +239,7 @@ namespace QL_CuaHang.DAO
 
 
 
-        //Phần code của UC Khách hàng
+        //Phần code của UC Quản lý nguyên liệu
         public static void ThemKhachHang(int maHoaDon, string tenKhachHang, DateTime ngayLap, decimal tongTien)
         {
             string sql = @"INSERT INTO HoaDon (MaHoaDon, TenKhachHang, NgayLap, TongTien) 
@@ -384,7 +384,7 @@ namespace QL_CuaHang.DAO
 
 
         // thêm vào CSDL với các dữ liệu đã lấy ra
-        public static void ThemChiTietHoaDon(int maHoaDon, string tenTraSua, string tenTopping, int soLuong, decimal giaTraSua, decimal giaTopping, decimal tongGia)
+        public static void ThemChiTietHoaDon(int maHoaDon, string tenTraSua, string tenTopping, int soLuong, decimal giaTraSua, decimal giaTopping)
         {
             string sqlGetMaTraSua = "SELECT MaTraSua FROM TraSua WHERE TenTraSua = @TenTraSua";
             object maTraSuaObj = KetNoiCSDL.ThucThiTruyVanLayGiaTri(sqlGetMaTraSua, "@TenTraSua", tenTraSua);

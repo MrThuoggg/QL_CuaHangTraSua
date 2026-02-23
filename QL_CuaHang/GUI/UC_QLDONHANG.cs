@@ -45,11 +45,10 @@ namespace QL_CuaHang.GUI
             {
                 if (dgdanhsachhoadon.SelectedRows.Count > 0)
                 {
-                    string maHoaDon = dgdanhsachhoadon.SelectedRows[0].Cells["Mã Hóa Đơn"].Value.ToString();
+                    string maHoaDon = dgdanhsachhoadon.SelectedRows[0].Cells["Ma_Hoa_Don"].Value.ToString();
 
-                    string tenKhachHang = txttenkhachhang.Text.Trim();
                     DateTime ngayMua = dtngaymua.Value;
-                    MenuDAO.CapNhatDonHang(maHoaDon, tenKhachHang, ngayMua);
+                    MenuDAO.CapNhatDonHang(maHoaDon, ngayMua);
                     ThongTinHoaDon();
 
                     MessageBox.Show("Cập nhật hóa đơn thành công!");
@@ -71,9 +70,9 @@ namespace QL_CuaHang.GUI
             {
                 if (dgdanhsachhoadon.SelectedRows.Count > 0)
                 {
-                    string maHoaDon = dgdanhsachhoadon.SelectedRows[0].Cells["Mã Hóa Đơn"].Value.ToString();
+                    string maHoaDon = dgdanhsachhoadon.SelectedRows[0].Cells["Ma_Hoa_Don"].Value.ToString();
 
-                    // Hiển thị hộp thoại xác nhận
+                    // Hiển thị hộp thoại xác nhận xóa
                     DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa đơn hàng với mã hóa đơn: {maHoaDon} không?","Xác nhận xóa",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
@@ -133,7 +132,7 @@ namespace QL_CuaHang.GUI
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgdanhsachhoadon.Rows[e.RowIndex];
-                txttenkhachhang.Text = row.Cells["Ten_Khach_Hang"].Value.ToString();
+                txtnoidung.Text = row.Cells["Chi_Tiet_Don_Hang"].Value.ToString();
                 dtngaymua.Text = row.Cells["Ngay_Lap"].Value.ToString();
             }
         }
@@ -194,6 +193,11 @@ namespace QL_CuaHang.GUI
                 e.Handled = true;
                 MessageBox.Show("Vui lòng nhập số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void dgdanhsachhoadon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

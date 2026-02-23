@@ -46,7 +46,7 @@
             this.btxoadon = new Guna.UI2.WinForms.Guna2Button();
             this.btcapnhat = new Guna.UI2.WinForms.Guna2Button();
             this.dtngaymua = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txttenkhachhang = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtnoidung = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -110,6 +110,7 @@
             this.dgdanhsachhoadon.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgdanhsachhoadon.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgdanhsachhoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgdanhsachhoadon_CellClick);
+            this.dgdanhsachhoadon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgdanhsachhoadon_CellContentClick);
             // 
             // guna2GroupBox1
             // 
@@ -129,7 +130,7 @@
             this.guna2GroupBox1.Controls.Add(this.btxoadon);
             this.guna2GroupBox1.Controls.Add(this.btcapnhat);
             this.guna2GroupBox1.Controls.Add(this.dtngaymua);
-            this.guna2GroupBox1.Controls.Add(this.txttenkhachhang);
+            this.guna2GroupBox1.Controls.Add(this.txtnoidung);
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
@@ -156,7 +157,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.guna2Button3.Location = new System.Drawing.Point(129, 239);
+            this.guna2Button3.Location = new System.Drawing.Point(57, 239);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(67, 45);
             this.guna2Button3.TabIndex = 23;
@@ -202,14 +203,14 @@
             this.txtNhapCanTim.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhapCanTim.ForeColor = System.Drawing.Color.Black;
             this.txtNhapCanTim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNhapCanTim.Location = new System.Drawing.Point(208, 239);
+            this.txtNhapCanTim.Location = new System.Drawing.Point(150, 239);
             this.txtNhapCanTim.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtNhapCanTim.Name = "txtNhapCanTim";
             this.txtNhapCanTim.PasswordChar = '\0';
             this.txtNhapCanTim.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtNhapCanTim.PlaceholderText = "Nhập mã cần tìm";
             this.txtNhapCanTim.SelectedText = "";
-            this.txtNhapCanTim.Size = new System.Drawing.Size(301, 45);
+            this.txtNhapCanTim.Size = new System.Drawing.Size(355, 58);
             this.txtNhapCanTim.TabIndex = 15;
             this.txtNhapCanTim.Tag = "";
             this.txtNhapCanTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhapCanTim_KeyPress);
@@ -385,42 +386,42 @@
             this.dtngaymua.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtngaymua.ForeColor = System.Drawing.Color.Black;
             this.dtngaymua.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtngaymua.Location = new System.Drawing.Point(208, 150);
+            this.dtngaymua.Location = new System.Drawing.Point(150, 150);
             this.dtngaymua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtngaymua.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtngaymua.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtngaymua.Name = "dtngaymua";
-            this.dtngaymua.Size = new System.Drawing.Size(301, 43);
+            this.dtngaymua.Size = new System.Drawing.Size(355, 58);
             this.dtngaymua.TabIndex = 10;
             this.dtngaymua.Value = new System.DateTime(2024, 12, 16, 15, 14, 8, 951);
             this.dtngaymua.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged);
             // 
-            // txttenkhachhang
+            // txtnoidung
             // 
-            this.txttenkhachhang.BackColor = System.Drawing.Color.Silver;
-            this.txttenkhachhang.BorderColor = System.Drawing.Color.Silver;
-            this.txttenkhachhang.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txttenkhachhang.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txttenkhachhang.DefaultText = "";
-            this.txttenkhachhang.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txttenkhachhang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txttenkhachhang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttenkhachhang.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttenkhachhang.FillColor = System.Drawing.Color.Silver;
-            this.txttenkhachhang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttenkhachhang.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttenkhachhang.ForeColor = System.Drawing.Color.Black;
-            this.txttenkhachhang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttenkhachhang.Location = new System.Drawing.Point(208, 65);
-            this.txttenkhachhang.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txttenkhachhang.Name = "txttenkhachhang";
-            this.txttenkhachhang.PasswordChar = '\0';
-            this.txttenkhachhang.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txttenkhachhang.PlaceholderText = "";
-            this.txttenkhachhang.SelectedText = "";
-            this.txttenkhachhang.Size = new System.Drawing.Size(301, 45);
-            this.txttenkhachhang.TabIndex = 1;
-            this.txttenkhachhang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenkhachhang_KeyPress);
+            this.txtnoidung.BackColor = System.Drawing.Color.Silver;
+            this.txtnoidung.BorderColor = System.Drawing.Color.Silver;
+            this.txtnoidung.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtnoidung.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtnoidung.DefaultText = "";
+            this.txtnoidung.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtnoidung.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtnoidung.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnoidung.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtnoidung.FillColor = System.Drawing.Color.Silver;
+            this.txtnoidung.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnoidung.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnoidung.ForeColor = System.Drawing.Color.Black;
+            this.txtnoidung.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtnoidung.Location = new System.Drawing.Point(150, 65);
+            this.txtnoidung.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtnoidung.Name = "txtnoidung";
+            this.txtnoidung.PasswordChar = '\0';
+            this.txtnoidung.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtnoidung.PlaceholderText = "";
+            this.txtnoidung.SelectedText = "";
+            this.txtnoidung.Size = new System.Drawing.Size(355, 54);
+            this.txtnoidung.TabIndex = 1;
+            this.txtnoidung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenkhachhang_KeyPress);
             // 
             // label2
             // 
@@ -440,9 +441,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
             this.label1.Location = new System.Drawing.Point(17, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 27);
+            this.label1.Size = new System.Drawing.Size(107, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên khách hàng";
+            this.label1.Text = "Nội dung";
             // 
             // guna2TextBox2
             // 
@@ -460,7 +461,7 @@
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2TextBox2.ForeColor = System.Drawing.Color.Navy;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(16, 9);
+            this.guna2TextBox2.Location = new System.Drawing.Point(19, 9);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
@@ -503,7 +504,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgdanhsachhoadon;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txttenkhachhang;
+        private Guna.UI2.WinForms.Guna2TextBox txtnoidung;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtngaymua;
         private Guna.UI2.WinForms.Guna2Button btthongke;
         private Guna.UI2.WinForms.Guna2Button btxoadon;

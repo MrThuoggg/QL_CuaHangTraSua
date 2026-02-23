@@ -20,11 +20,25 @@ namespace QL_CuaHang.GUI
         }
         public static DataTable ThongNguoidung(string ten, string mk)
         {
-            string sql = "Select * From NGUOIDUNG where TenDangNhap='" + ten + "' and MatKhau='" + mk + "'";
-            DataTable dt = new DataTable();
-            dt = KetNoiCSDL.DocDuLieu(sql);
-            return dt;
+            //lỗi admin' OR '1'='1
+            // string sql = "Select * From NGUOIDUNG where TenDangNhap='" + ten + "' and MatKhau='" + mk + "'";
+            // DataTable dt = new DataTable();
+            // dt = KetNoiCSDL.DocDuLieu(sql);
+            // return dt;
+
+
+            // sau khi sửa lỗi
+            string sql = "SELECT * FROM NGUOIDUNG WHERE TenDangNhap = @ten AND MatKhau = @mk";
+            var pars = new Dictionary<string, object>
+            {
+                {"@ten", ten?.Trim()},
+                {"@mk", mk?.Trim()}
+            };
+            return KetNoiCSDL.DocDuLieu(sql, pars);
         }
+
+
+
         private void Form_DangNhap_Load(object sender, EventArgs e)
         {
             gunaMatKhau.UseSystemPasswordChar = true; 

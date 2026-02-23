@@ -20,19 +20,18 @@ namespace QL_CuaHang.GUI
         public void ThongTinKhachHang()
         {
             DataTable dt = new DataTable();
-            dt = MenuDAO.ThongTinKhachHang();
-            dgdanhsachkhachhang.DataSource = dt;
+            dgdanhsachnguyenlieu.DataSource = dt;
         }
         private void CapNhatThongKe()
         {
             try
             {
                 //luôn lấy dữ liệu từ datagrid mới nhất
-                DataTable dt = (DataTable)dgdanhsachkhachhang.DataSource;
-                int tongKhachHang = dgdanhsachkhachhang.Rows.Count -1;
+                DataTable dt = (DataTable)dgdanhsachnguyenlieu.DataSource;
+                int tongKhachHang = dgdanhsachnguyenlieu.Rows.Count -1;
                 decimal tongDoanhThu = 0;
 
-                foreach (DataGridViewRow row in dgdanhsachkhachhang.Rows)
+                foreach (DataGridViewRow row in dgdanhsachnguyenlieu.Rows)
                 {
                     if (row.Cells["Tổng Tiền"].Value != null && decimal.TryParse(row.Cells["Tổng Tiền"].Value.ToString(), out decimal tongTien))
                     {
@@ -56,14 +55,14 @@ namespace QL_CuaHang.GUI
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgdanhsachkhachhang.Rows[e.RowIndex];
-                txtmahoadon.Text = row.Cells["Mã HD"].Value?.ToString();
-                txttenkhachhang.Text = row.Cells["Tên Khách Hàng"].Value?.ToString();
+                DataGridViewRow row = dgdanhsachnguyenlieu.Rows[e.RowIndex];
+                txtmanguyenlieu.Text = row.Cells["Mã HD"].Value?.ToString();
+                txttennguyenlieu.Text = row.Cells["Tên Khách Hàng"].Value?.ToString();
                 if (decimal.TryParse(row.Cells["Tổng Tiền"].Value?.ToString(), out decimal tongTien))
-                    txttongtien.Text = tongTien.ToString("0");
+                    txttonkho.Text = tongTien.ToString("0");
 
                 else
-                    txttongtien.Text = "0";
+                    txttonkho.Text = "0";
 
                 if (row.Cells["Ngày Lập"].Value != null && DateTime.TryParse(row.Cells["Ngày Lập"].Value.ToString(), out DateTime ngayLap))
                     dtngaymua.Value = ngayLap;
@@ -75,15 +74,15 @@ namespace QL_CuaHang.GUI
 
         private void gunathemKH_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtmahoadon.Text.Trim(), out int maHoaDon))
+            if (!int.TryParse(txtmanguyenlieu.Text.Trim(), out int maHoaDon))
             {
                 MessageBox.Show("Mã hóa đơn phải là số nguyên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string tenKhachHang = txttenkhachhang.Text.Trim();
+            string tenKhachHang = txttennguyenlieu.Text.Trim();
             DateTime ngayLap = dtngaymua.Value;
 
-            if (!decimal.TryParse(txttongtien.Text.Trim(), out decimal tongTien))
+            if (!decimal.TryParse(txttonkho.Text.Trim(), out decimal tongTien))
             {
                 MessageBox.Show("Tổng tiền không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -105,10 +104,10 @@ namespace QL_CuaHang.GUI
         {
             try
             {
-                int maHoaDon = int.Parse(txtmahoadon.Text.Trim());
-                string tenKhachHang = txttenkhachhang.Text.Trim();
+                int maHoaDon = int.Parse(txtmanguyenlieu.Text.Trim());
+                string tenKhachHang = txttennguyenlieu.Text.Trim();
                 DateTime ngayLap = dtngaymua.Value;
-                decimal tongTien = decimal.Parse(txttongtien.Text.Trim());
+                decimal tongTien = decimal.Parse(txttonkho.Text.Trim());
                 MenuDAO.CapNhatKhachHang(maHoaDon, tenKhachHang, ngayLap, tongTien);
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ThongTinKhachHang();
@@ -123,7 +122,7 @@ namespace QL_CuaHang.GUI
         {
             try
             {
-                int maHoaDon = int.Parse(txtmahoadon.Text.Trim());
+                int maHoaDon = int.Parse(txtmanguyenlieu.Text.Trim());
                 DialogResult confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (confirmResult == DialogResult.Yes)
                 {
@@ -133,10 +132,10 @@ namespace QL_CuaHang.GUI
                     ThongTinKhachHang();
                     CapNhatThongKe();
 
-                    txtmahoadon.Clear();
-                    txttenkhachhang.Clear();
+                    txtmanguyenlieu.Clear();
+                    txttennguyenlieu.Clear();
                     dtngaymua.Value = DateTime.Now;
-                    txttongtien.Clear();
+                    txttonkho.Clear();
                 }
                 else
                     MessageBox.Show("Hóa đơn không bị xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,7 +169,7 @@ namespace QL_CuaHang.GUI
             DataTable dt =MenuDAO.TimKiemKhachHang(tenKH);
 
             if (dt.Rows.Count > 0)
-                dgdanhsachkhachhang.DataSource = dt;
+                dgdanhsachnguyenlieu.DataSource = dt;
 
             else
                 MessageBox.Show("Không tìm thấy khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

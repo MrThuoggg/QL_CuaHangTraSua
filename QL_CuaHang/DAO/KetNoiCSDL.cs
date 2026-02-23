@@ -16,7 +16,7 @@ namespace QL_CuaHang.DAO
         {
             try
             {
-                string sqlcon = @"Server=localhost;Database=ShopTraSua;Uid=root;Pwd=;";
+                string sqlcon = @"Server=localhost;Database=ShopTraSua;Uid=root;Pwd=123456;";
                 cnn.ConnectionString = sqlcon;
                 if (cnn.State == ConnectionState.Closed)
                 {
