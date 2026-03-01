@@ -17,11 +17,19 @@ namespace QL_CuaHang.GUI
         {
             InitializeComponent();
         }
-        private void DanhSachNhanVien()
+        private void LoadDanhSachNhanVien()
         {
-            DataTable dt = new DataTable();
-            dt = MenuDAO.ThongTinNhanVien();
-            dgdanhsachnhanvien.DataSource = dt;
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = MenuDAO.ThongTinNhanVien();
+                dgdanhsachnhanvien.DataSource = dt;
+                MenuDAO.FormatDataGridView(dgdanhsachnhanvien);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách nhân viên:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void DanhSachChucVu()
         {
@@ -33,7 +41,7 @@ namespace QL_CuaHang.GUI
         }
         private void UC_QLNHANVIEN_Load(object sender, EventArgs e)
         {
-            DanhSachNhanVien();
+            LoadDanhSachNhanVien();
             DanhSachChucVu();
         }
 
@@ -48,6 +56,7 @@ namespace QL_CuaHang.GUI
                 txtIDnhanvien.Text = (int.Parse(id) + 1).ToString();
         }
 
+        // Nút thêm
         private void gunathem_Click(object sender, EventArgs e)
         {
             try
@@ -68,7 +77,7 @@ namespace QL_CuaHang.GUI
                 MenuDAO.ThemNhanVien(idMoi, ten, chucvu, luong);
 
                 MessageBox.Show("Thêm nhân viên thành công");
-                DanhSachNhanVien();
+                LoadDanhSachNhanVien();
             }
             catch (Exception ex)
             {
@@ -76,6 +85,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút cập nhật
         private void gunacapnhat_Click(object sender, EventArgs e)
         {
             try
@@ -89,7 +99,7 @@ namespace QL_CuaHang.GUI
 
                     MenuDAO.CapNhatNhanVien(id, tenNhanVien, chucVu, luongCoBan);
 
-                    DanhSachNhanVien();
+                    LoadDanhSachNhanVien();
 
                     MessageBox.Show("Cập nhật thông tin thành công!");
                 }
@@ -103,6 +113,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút xóa
         private void gunaxoa_Click(object sender, EventArgs e)
         {
             if (dgdanhsachnhanvien.SelectedRows.Count == 0)
@@ -117,7 +128,7 @@ namespace QL_CuaHang.GUI
                 if (result == DialogResult.Yes)
                 {
                     MenuDAO.XoaNhanVien(id); 
-                    DanhSachNhanVien();     
+                    LoadDanhSachNhanVien();     
                     MessageBox.Show("Xóa nhân viên thành công!");
                 }
                 else
@@ -130,7 +141,7 @@ namespace QL_CuaHang.GUI
         }
 
 
-
+        // Sự kiện click vào danh sách 
         private void dgdanhsachnhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -180,6 +191,8 @@ namespace QL_CuaHang.GUI
 
         }
 
+
+        // Nút tìm kiếm
         private void bttimkiem_Click(object sender, EventArgs e)
         {
             string id = txtNhapCanTim.Text.Trim();
@@ -207,7 +220,7 @@ namespace QL_CuaHang.GUI
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            DanhSachNhanVien();
+            LoadDanhSachNhanVien();
         }
 
         private void bttinhluong_Click(object sender, EventArgs e)
@@ -216,6 +229,7 @@ namespace QL_CuaHang.GUI
             frm_tinhluong.ShowDialog();
         }
 
+        // Định nghĩa kiểu nhập textBox
         private void txttennhanvien_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -224,7 +238,6 @@ namespace QL_CuaHang.GUI
                 MessageBox.Show("Vui lòng nhập ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void txtluongnhanvien_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -233,7 +246,6 @@ namespace QL_CuaHang.GUI
                 MessageBox.Show("Vui lòng nhập số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void txtNhapCanTim_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -242,22 +254,18 @@ namespace QL_CuaHang.GUI
                 MessageBox.Show("Chỉ được nhập mã số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void txtIDnhanvien_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void txttennhanvien_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void cbchucvu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void dgdanhsachnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

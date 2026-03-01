@@ -67,7 +67,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Khaki;
             this.guna2Button1.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.guna2Button1.Location = new System.Drawing.Point(729, 405);
+            this.guna2Button1.Location = new System.Drawing.Point(741, 362);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(173, 73);
             this.guna2Button1.TabIndex = 3;
@@ -102,7 +102,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Khaki;
             this.guna2Button3.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.guna2Button3.Location = new System.Drawing.Point(930, 405);
+            this.guna2Button3.Location = new System.Drawing.Point(942, 362);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(173, 73);
             this.guna2Button3.TabIndex = 6;
@@ -125,14 +125,14 @@
             this.gunaMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.gunaMatKhau.IconLeft = global::QL_CuaHang.Properties.Resources.imgkey;
             this.gunaMatKhau.IconLeftSize = new System.Drawing.Size(35, 35);
-            this.gunaMatKhau.Location = new System.Drawing.Point(729, 276);
+            this.gunaMatKhau.Location = new System.Drawing.Point(730, 276);
             this.gunaMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gunaMatKhau.Name = "gunaMatKhau";
             this.gunaMatKhau.PasswordChar = '\0';
             this.gunaMatKhau.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.gunaMatKhau.PlaceholderText = "Password";
             this.gunaMatKhau.SelectedText = "";
-            this.gunaMatKhau.Size = new System.Drawing.Size(374, 56);
+            this.gunaMatKhau.Size = new System.Drawing.Size(385, 56);
             this.gunaMatKhau.TabIndex = 1;
             // 
             // gunaTaiKhoan
@@ -158,7 +158,7 @@
             this.gunaTaiKhoan.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.gunaTaiKhoan.PlaceholderText = "Enter Username";
             this.gunaTaiKhoan.SelectedText = "";
-            this.gunaTaiKhoan.Size = new System.Drawing.Size(374, 56);
+            this.gunaTaiKhoan.Size = new System.Drawing.Size(385, 56);
             this.gunaTaiKhoan.TabIndex = 0;
             this.gunaTaiKhoan.TextChanged += new System.EventHandler(this.gunaTaiKhoan_TextChanged);
             // 
@@ -166,21 +166,22 @@
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BorderRadius = 50;
-            this.guna2PictureBox1.Image = global::QL_CuaHang.Properties.Resources.logoooooo2;
+            this.guna2PictureBox1.Image = global::QL_CuaHang.Properties.Resources.Remove_bg_ai_1729073212271;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-4, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(219, 147);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(255, 213);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 7;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::QL_CuaHang.Properties.Resources.imgminion;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(849, 500);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(834, 466);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(189, 176);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,9 +199,9 @@
             this.btpassword.FillColor = System.Drawing.Color.Khaki;
             this.btpassword.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.btpassword.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btpassword.Location = new System.Drawing.Point(950, 339);
+            this.btpassword.Location = new System.Drawing.Point(987, 276);
             this.btpassword.Name = "btpassword";
-            this.btpassword.Size = new System.Drawing.Size(153, 46);
+            this.btpassword.Size = new System.Drawing.Size(128, 56);
             this.btpassword.TabIndex = 9;
             this.btpassword.Text = "Hiện";
             this.btpassword.Click += new System.EventHandler(this.btpassword_Click);

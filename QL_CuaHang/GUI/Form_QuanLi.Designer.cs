@@ -66,7 +66,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1277, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(1556, 39);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,8 +99,8 @@
             this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgKHang1;
             this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Name = "qUẢNLÝKHÁCHHÀNGToolStripMenuItem";
-            this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Size = new System.Drawing.Size(367, 34);
-            this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Text = "QUẢN LÝ KHÁCH HÀNG";
+            this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Size = new System.Drawing.Size(368, 34);
+            this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Text = "QUẢN LÝ NGUYÊN LIỆU";
             this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÝKHÁCHHÀNGToolStripMenuItem_Click);
             // 
             // qUẢNLÝNHÂNVIÊNToolStripMenuItem
@@ -207,7 +207,7 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.6F);
             this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1277, 962);
+            this.panel1.Size = new System.Drawing.Size(1556, 962);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -215,9 +215,9 @@
             // 
             this.guna2PictureBox3.Image = global::QL_CuaHang.Properties.Resources.Remove_bg_ai_1729072692505;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(959, 3);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1274, 163);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(309, 102);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(279, 102);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 1;
             this.guna2PictureBox3.TabStop = false;
@@ -227,9 +227,9 @@
             // 
             this.guna2PictureBox2.Image = global::QL_CuaHang.Properties.Resources.Remove_bg_ai_1729072330398;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(478, 3);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(1274, 385);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(356, 107);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(270, 107);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 1;
             this.guna2PictureBox2.TabStop = false;
@@ -239,19 +239,20 @@
             // 
             this.guna2PictureBox1.Image = global::QL_CuaHang.Properties.Resources.Remove_bg_ai_1729072212730;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1309, 6);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(187, 99);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(200, 99);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(12, 111);
+            this.panel2.Location = new System.Drawing.Point(12, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1256, 775);
+            this.panel2.Size = new System.Drawing.Size(1256, 750);
             this.panel2.TabIndex = 0;
             // 
             // Form_QuanLi
@@ -259,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1277, 1001);
+            this.ClientSize = new System.Drawing.Size(1556, 1001);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.6F);
@@ -269,6 +270,7 @@
             this.Name = "Form_QuanLi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_QuanLi_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -306,7 +306,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>QLNhanVien</DataSetName>
-        <Top>0.45556in</Top>
+        <Top>0.57223in</Top>
         <Left>0.27167in</Left>
         <Height>0.5in</Height>
         <Width>5.95334in</Width>
@@ -368,7 +368,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>1.025in</Top>
+        <Top>1.28333in</Top>
         <Left>0.27167in</Left>
         <Height>0.25in</Height>
         <Width>1.72917in</Width>
@@ -401,7 +401,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.4in</Top>
+        <Top>1.65833in</Top>
         <Left>0.27167in</Left>
         <Height>0.25in</Height>
         <Width>1.65694in</Width>
@@ -434,7 +434,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>1.025in</Top>
+        <Top>1.28333in</Top>
         <Left>1.9425in</Left>
         <Height>0.25in</Height>
         <Width>0.57083in</Width>
@@ -467,7 +467,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>1.4in</Top>
+        <Top>1.65833in</Top>
         <Left>1.9425in</Left>
         <Height>0.25in</Height>
         <Width>2.00417in</Width>
@@ -483,7 +483,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.775in</Height>
+    <Height>2.09167in</Height>
     <Style>
       <BackgroundColor>#e3f2fd</BackgroundColor>
     </Style>
@@ -529,19 +529,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Logo">
-          <Source>Embedded</Source>
-          <Value>z5933842855353_acb9cbc7b2bb2b8aca02b60801b09e2c</Value>
-          <Sizing>FitProportional</Sizing>
-          <Height>0.93056in</Height>
-          <Width>0.92917in</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox10">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -563,7 +550,7 @@
           <Left>4.8in</Left>
           <Height>0.25in</Height>
           <Width>1.7in</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -596,7 +583,7 @@
           <Left>3.99667in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -627,7 +614,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Trà sữa Thường-Hưng</Value>
+                  <Value>Trà sữa MinhThuong</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>

@@ -19,9 +19,18 @@ namespace QL_CuaHang.GUI
         }
         public void DanhSachTopping()
         {
-            dgdanhsachtopping.DataSource = null;
-            DataTable dt = MenuDAO.ThongTinTopping();
-            dgdanhsachtopping.DataSource = dt;
+            try
+            {
+                DataTable dt = MenuDAO.ThongTinTopping();
+                dgdanhsachtopping.DataSource = dt;
+                MenuDAO.FormatDataGridView(dgdanhsachtopping);
+                dgdanhsachtopping.Columns["Gia"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+                dgdanhsachtopping.Columns["Gia"].DefaultCellStyle.Format = "N0";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách topping:\n" + ex.Message,"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btthoat_Click(object sender, EventArgs e)
         {
@@ -33,6 +42,7 @@ namespace QL_CuaHang.GUI
             DanhSachTopping();
         }
 
+        // Nút thêm
         private void btthem_Click(object sender, EventArgs e)
         {
             try
@@ -50,12 +60,14 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút cập nhật
         private void btcapnhat_Click(object sender, EventArgs e)
         {
             Form_BaoCao_Topping form_BaoCao_Topping = new Form_BaoCao_Topping();
             form_BaoCao_Topping.ShowDialog();
         }
 
+        // Nút xóa
         private void btxoa_Click(object sender, EventArgs e)
         {
             if (dgdanhsachtopping.SelectedRows.Count == 0)
@@ -82,13 +94,16 @@ namespace QL_CuaHang.GUI
                 MessageBox.Show("Đã hủy thao tác xóa!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // Sự kiện click vào danh sách
         private void dgdanhsachtopping_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgdanhsachtopping.Rows[e.RowIndex];
                 txttentopping.Text = row.Cells["TenTopping"].Value.ToString();
-                txtgia.Text = row.Cells["Gia"].Value.ToString();
+
+                decimal giaBan = Convert.ToDecimal(row.Cells["Gia"].Value ?? 0);    
+                txtgia.Text = giaBan.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
             }
         }
 
@@ -97,6 +112,8 @@ namespace QL_CuaHang.GUI
 
         }
 
+
+        // Định nghĩa kiểu nhập textBox
         private void txttentopping_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))

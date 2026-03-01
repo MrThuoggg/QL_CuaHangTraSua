@@ -96,5 +96,10 @@ namespace QL_CuaHang.GUI
                 btpassword.Text = "Hiện"; 
             }
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

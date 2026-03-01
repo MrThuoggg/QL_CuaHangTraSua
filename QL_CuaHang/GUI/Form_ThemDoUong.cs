@@ -18,9 +18,19 @@ namespace QL_CuaHang.GUI
         }
         public void DanhSachTraSua()
         {
-            DataTable dt = new DataTable();
-            dt = MenuDAO.ThongTinTraSua();
-            dgdanhsachtrasua.DataSource = dt;
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = MenuDAO.ThongTinTraSua();
+                dgdanhsachtrasua.DataSource = dt;
+                MenuDAO.FormatDataGridView(dgdanhsachtrasua);
+                dgdanhsachtrasua.Columns["Gia"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+                dgdanhsachtrasua.Columns["Gia"].DefaultCellStyle.Format = "NO";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách trà sữa:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void DanhSachMaTraSua()
         {
@@ -37,6 +47,7 @@ namespace QL_CuaHang.GUI
             DanhSachTraSua();
         }
 
+        // Nút thêm
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             try
@@ -61,6 +72,7 @@ namespace QL_CuaHang.GUI
 
         }
 
+        // Nút tạo mã mới
         private void btghi_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -72,6 +84,7 @@ namespace QL_CuaHang.GUI
                 txtmatrasua.Text = (int.Parse(id) + 1).ToString();
         }
 
+        // Nút xóa
         private void btxoa_Click(object sender, EventArgs e)
         {
             try
@@ -92,6 +105,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút cập nhật
         private void btcapnhat_Click(object sender, EventArgs e)
         {
             try
@@ -111,6 +125,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // in báo cáo
         private void btin_Click(object sender, EventArgs e)
         {
             Form_BaoCao_TraSua f = new Form_BaoCao_TraSua();
@@ -127,6 +142,7 @@ namespace QL_CuaHang.GUI
             this.Close();
         }
 
+        // Sự kiện click vào danh sách
         private void dgdanhsachtrasua_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -134,11 +150,14 @@ namespace QL_CuaHang.GUI
                 DataGridViewRow row = dgdanhsachtrasua.Rows[e.RowIndex];
                 txtmatrasua.Text = row.Cells["MaTraSua"].Value.ToString();
                 txttentrasua.Text = row.Cells["TenTraSua"].Value.ToString();
-                txtgianiemyet.Text = row.Cells["Gia"].Value.ToString();
+                decimal giaNiemYet = Convert.ToDecimal(row.Cells["Gia"].Value ?? 0);
+                txtgianiemyet.Text = giaNiemYet.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
                 cbmaloaitra.Text = row.Cells["MaLoaiTra"].Value.ToString();
             }
         }
 
+
+        // Định nghĩa kiểu nhập textBox
         private void guna2HtmlLabel5_Click(object sender, EventArgs e)
         {
 

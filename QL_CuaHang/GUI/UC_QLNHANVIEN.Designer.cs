@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.cbchucvu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtluongnhanvien = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,7 +75,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(16, 91);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(16, 72);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(532, 319);
             this.guna2GroupBox1.TabIndex = 0;
@@ -254,35 +254,35 @@
             // 
             // dgdanhsachnhanvien
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgdanhsachnhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgdanhsachnhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgdanhsachnhanvien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.6F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgdanhsachnhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.6F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgdanhsachnhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgdanhsachnhanvien.ColumnHeadersHeight = 4;
             this.dgdanhsachnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.6F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgdanhsachnhanvien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.6F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgdanhsachnhanvien.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgdanhsachnhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgdanhsachnhanvien.Location = new System.Drawing.Point(16, 425);
+            this.dgdanhsachnhanvien.Location = new System.Drawing.Point(16, 397);
             this.dgdanhsachnhanvien.Name = "dgdanhsachnhanvien";
             this.dgdanhsachnhanvien.ReadOnly = true;
             this.dgdanhsachnhanvien.RowHeadersVisible = false;
             this.dgdanhsachnhanvien.RowHeadersWidth = 51;
             this.dgdanhsachnhanvien.RowTemplate.Height = 24;
-            this.dgdanhsachnhanvien.Size = new System.Drawing.Size(1218, 335);
+            this.dgdanhsachnhanvien.Size = new System.Drawing.Size(1218, 348);
             this.dgdanhsachnhanvien.TabIndex = 8;
             this.dgdanhsachnhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgdanhsachnhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -359,7 +359,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Navy;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(554, 91);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(554, 72);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(680, 319);
             this.guna2GroupBox2.TabIndex = 21;
@@ -552,9 +552,9 @@
             this.guna2PictureBox1.BorderRadius = 5;
             this.guna2PictureBox1.Image = global::QL_CuaHang.Properties.Resources.Remove_bg_ai_1729073579208;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1073, 0);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1041, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(183, 103);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(215, 103);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 18;
             this.guna2PictureBox1.TabStop = false;
@@ -571,7 +571,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.6F);
             this.Name = "UC_QLNHANVIEN";
-            this.Size = new System.Drawing.Size(1256, 775);
+            this.Size = new System.Drawing.Size(1256, 750);
             this.Load += new System.EventHandler(this.UC_QLNHANVIEN_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();

@@ -166,6 +166,9 @@
   <data name="Remove-bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Remove-bg.ai_1729072869143.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Remove-bg.ai_1729072692505" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Remove-bg.ai_1729072692505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +198,9 @@
   </data>
   <data name="Apps-system-software-update-icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Apps-system-software-update-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z5933815489693_a72dbde6e9ff3f72743d692af603791a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\z5933815489693_a72dbde6e9ff3f72743d692af603791a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgDanhmuc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\ImgDanhmuc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,14 +235,11 @@
   <data name="imgBaocao1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\imgBaocao.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Remove-bg.ai_1729072692505" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Remove-bg.ai_1729072692505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconxoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconxoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconxoa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconxoa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -270,6 +273,9 @@
   </data>
   <data name="background-tra-sua-dep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\background-tra-sua-dep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgadd2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Apps-system-software-update-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Apps-system-software-update-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,7 +340,7 @@
   <data name="Remove-bg.ai_1729072330398" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Remove-bg.ai_1729072330398.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgadd2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgadd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Remove-bg.ai_1729073212271" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Remove-bg.ai_1729073212271.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

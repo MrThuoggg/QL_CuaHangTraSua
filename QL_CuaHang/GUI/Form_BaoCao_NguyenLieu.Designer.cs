@@ -1,6 +1,6 @@
 ﻿namespace QL_CuaHang.GUI
 {
-    partial class Form_BaoCao_KhachHang
+    partial class Form_BaoCao_NguyenLieu
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // Form_BaoCao_KhachHang
             // 
@@ -47,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form_BaoCao_KhachHang";
-            this.Text = "BÁO CÁO KHÁCH HÀNG";
+            this.Text = "BÁO CÁO NGUYÊN LIỆU";
             this.Load += new System.EventHandler(this.Form_BaoCao_KhachHang_Load);
             this.ResumeLayout(false);
 

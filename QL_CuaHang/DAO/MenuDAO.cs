@@ -7,11 +7,28 @@ using System.Threading.Tasks;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Windows.Forms;
 using Mysqlx.Crud;
+using System.Drawing;
+using System.Globalization;
 
 namespace QL_CuaHang.DAO
 {
     internal class MenuDAO
     {
+
+        // Format datagridView
+        public static void FormatDataGridView(DataGridView grid, float fontSize = 10f)
+        {
+            if (grid == null) return;
+            Font defaultFont = new Font("Segoe UI", fontSize, FontStyle.Regular);
+            grid.DefaultCellStyle.Font = defaultFont;
+            grid.DefaultCellStyle.Font = new Font(defaultFont, FontStyle.Bold);
+
+            var vietCulture = new CultureInfo("vi-VN");
+            grid.ReadOnly = true;
+            grid.AllowUserToAddRows = false;
+            grid.AllowUserToDeleteRows = false;
+            grid.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
 
         // Phần code hiển thị dữ liệu lên DataGridView của các UserControl
         public static DataTable ThongTinTraSua()
@@ -84,12 +101,12 @@ namespace QL_CuaHang.DAO
                             MaNguyenLieu, 
                             TenNguyenLieu, 
                             DonViTinh, 
-                            FORMAT(GiaNhap, 0) AS GiaNhap, 
+                            GiaNhap, 
                             TonKho, 
                             TonKhoToiThieu,
                             IF(TonKho <= TonKhoToiThieu, 'Cảnh báo', 'Bình thường') AS TrangThai
                         FROM NguyenLieu
-                        ORDER BY TenNguyenLieu";
+                        ORDER BY MaNguyenLieu ASC";
             DataTable dt = new DataTable();
             dt = KetNoiCSDL.DocDuLieu(sql);
             return dt;
@@ -240,62 +257,64 @@ namespace QL_CuaHang.DAO
 
 
         //Phần code của UC Quản lý nguyên liệu
-        public static void ThemKhachHang(int maHoaDon, string tenKhachHang, DateTime ngayLap, decimal tongTien)
+        public static void ThemNguyenLieu(string ten, string donVi, decimal giaNhap, decimal tonKho, decimal tonKhoToiThieu)
         {
-            string sql = @"INSERT INTO HoaDon (MaHoaDon, TenKhachHang, NgayLap, TongTien) 
-                   VALUES (@MaHoaDon, @TenKhachHang, @NgayLap, @TongTien);";
-            KetNoiCSDL.ThucThiTruyVan(sql, "@MaHoaDon", maHoaDon, "@TenKhachHang", tenKhachHang, "@NgayLap", ngayLap, "@TongTien", tongTien);
-
-        }
-
-
-        public static void CapNhatKhachHang(int maHoaDon, string tenKhachHang, DateTime ngayLap, decimal tongTien)
-        {
-            string sql = @"UPDATE HoaDon SET TenKhachHang = @TenKhachHang,NgayLap = @NgayLap, TongTien = @TongTien WHERE MaHoaDon = @MaHoaDon;";
-
-            KetNoiCSDL.ThucThiTruyVan(sql, "@MaHoaDon", maHoaDon, "@TenKhachHang", tenKhachHang, "@NgayLap", ngayLap, "@TongTien", tongTien);
-        }
-
-        public static void XoaKhachHang(int maHoaDon)
-        {
-            string sqlChiTiet = @"DELETE FROM ChiTietHoaDon WHERE MaHoaDon = @MaHoaDon;";
-            KetNoiCSDL.ThucThiTruyVan(sqlChiTiet, "@MaHoaDon", maHoaDon);
-
-
-            string sqlHoaDon = @"DELETE FROM HoaDon WHERE MaHoaDon = @MaHoaDon;";
-            KetNoiCSDL.ThucThiTruyVan(sqlHoaDon, "@MaHoaDon", maHoaDon);
-        }
-
-        //tìm kiếm khách hàng
-        public static DataTable TimKiemKhachHang(string tenKhachHang)
-        {
-            if (string.IsNullOrWhiteSpace(tenKhachHang))
-                throw new ArgumentException("Tên khách hàng không được để trống.");
-
             string sql = @"
-    SELECT 
-        hd.MaHoaDon AS 'Mã HD', 
-        CASE 
-            WHEN hd.TenKhachHang IS NULL THEN kh.TenKH 
-            ELSE hd.TenKhachHang 
-        END AS 'Tên Khách Hàng',
-        DATE_FORMAT(hd.NgayLap, '%d/%m/%Y') AS 'Ngày Lập', 
-        TRIM(TRAILING '.00' FROM FORMAT(hd.TongTien, 2)) AS 'Tổng Tiền'
-    FROM HoaDon hd
-    LEFT JOIN KhachHang kh ON hd.MaKH = kh.MaKH
-    WHERE CASE 
-            WHEN hd.TenKhachHang IS NULL THEN kh.TenKH 
-            ELSE hd.TenKhachHang 
-          END LIKE CONCAT('%', @tenKhachHang, '%')
-    ORDER BY hd.NgayLap DESC, hd.MaHoaDon";
-
-            DataTable dt = KetNoiCSDL.DocDuLieu(sql, new Dictionary<string, object> { { "@tenKhachHang", tenKhachHang } });
-            return dt;
+        INSERT INTO NguyenLieu (TenNguyenLieu, DonViTinh, GiaNhap, TonKho, TonKhoToiThieu)
+        VALUES (@Ten, @DonVi, @GiaNhap, @TonKho, @TonKhoToiThieu)";
+            KetNoiCSDL.ThucThiTruyVan(sql,
+                "@Ten", ten, "@DonVi", donVi, "@GiaNhap", giaNhap,
+                "@TonKho", tonKho, "@TonKhoToiThieu", tonKhoToiThieu);
         }
 
 
+        public static void CapNhatNguyenLieu(int ma, string ten, string donVi, decimal giaNhap, decimal tonKho, decimal tonKhoToiThieu)
+        {
+            string sql = @"UPDATE NguyenLieu 
+                          SET TenNguyenLieu = @Ten, DonViTinh = @DonVi, GiaNhap = @GiaNhap,
+                          TonKho = @TonKho, TonKhoToiThieu = @TonKhoToiThieu
+                          WHERE MaNguyenLieu = @Ma";
+            KetNoiCSDL.ThucThiTruyVan(sql, 
+                "@Ma", ma, "@Ten", ten, "@DonVi", donVi, "@GiaNhap", giaNhap,
+                "@TonKho", tonKho, "@TonKhoToiThieu", tonKhoToiThieu);
+        }
+
+        public static void XoaNguyenLieu(int ma)
+        {
+            string sql = @"Delete from NguyenLieu Where MaNguyenLieu = @Ma";
+            KetNoiCSDL.ThucThiTruyVan(sql, "@Ma", ma);
+        }
 
 
+        public static DataTable TimKiemNguyenLieu(string tuKhoa)
+        {
+            string sql = @"
+                        SELECT 
+                            MaNguyenLieu, 
+                            TenNguyenLieu, 
+                            DonViTinh, 
+                            FORMAT(GiaNhap, 0) AS GiaNhap, 
+                            TonKho, 
+                            TonKhoToiThieu,
+                            IF(TonKho <= TonKhoToiThieu, 'Cảnh báo', 'Bình thường') AS TrangThai
+                        FROM NguyenLieu
+                        WHERE TenNguyenLieu LIKE @TuKhoa
+                        ORDER BY TenNguyenLieu";
+
+            return KetNoiCSDL.DocDuLieu(sql, "@TuKhoa", "%" + tuKhoa + "%");
+        }
+
+
+        public static int LayMaNguyenLieu()
+        {
+            string sql = "SELECT COALESCE(MAX(MaNguyenLieu), 0) + 1 FROM NguyenLieu";
+            object result = KetNoiCSDL.ThucThiTruyVanLayGiaTri(sql);
+            if(result != null || result != DBNull.Value)
+            {
+                return Convert.ToInt32(result);
+            }
+            return 1;
+        }
 
         // phần code của form thêm đồ uống
 

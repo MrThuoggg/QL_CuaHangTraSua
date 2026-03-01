@@ -18,12 +18,21 @@ namespace QL_CuaHang.GUI
         {
             InitializeComponent();
         }
-        private void ThongTinHoaDon()
+        private void LoadDanhSachHoaDon()
         {
-            DataTable dt = new DataTable();
-            dt = MenuDAO.ThongTinHoaDon();
-            dgdanhsachhoadon.DataSource = dt;
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = MenuDAO.ThongTinHoaDon();
+                dgdanhsachhoadon.DataSource = dt;
+                MenuDAO.FormatDataGridView(dgdanhsachhoadon);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách hóa đơn:\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -36,9 +45,10 @@ namespace QL_CuaHang.GUI
 
         private void UC_QLDONHANG_Load(object sender, EventArgs e)
         {
-            ThongTinHoaDon();
+            LoadDanhSachHoaDon();
         }
 
+        // Nút cập nhật
         private void btcapnhat_Click(object sender, EventArgs e)
         {
             try
@@ -49,7 +59,7 @@ namespace QL_CuaHang.GUI
 
                     DateTime ngayMua = dtngaymua.Value;
                     MenuDAO.CapNhatDonHang(maHoaDon, ngayMua);
-                    ThongTinHoaDon();
+                    LoadDanhSachHoaDon();
 
                     MessageBox.Show("Cập nhật hóa đơn thành công!");
                 }
@@ -64,6 +74,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút xóa
         private void btxoadon_Click(object sender, EventArgs e)
         {
             try
@@ -77,7 +88,7 @@ namespace QL_CuaHang.GUI
                     if (result == DialogResult.Yes)
                     {
                         MenuDAO.XoaDonHang(maHoaDon);
-                        ThongTinHoaDon(); 
+                        LoadDanhSachHoaDon(); 
                         MessageBox.Show("Đơn hàng đã được xóa thành công!");
                     }
                     else
@@ -92,6 +103,8 @@ namespace QL_CuaHang.GUI
             }
 
         }
+
+        // Nút thống kê
         private void btthongke_Click(object sender, EventArgs e)
         {
             try
@@ -127,6 +140,8 @@ namespace QL_CuaHang.GUI
             frm_baocaodonhang.ShowDialog();
         }
 
+
+        // Sự kiện click vào danh sách 
         private void dgdanhsachhoadon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -137,6 +152,7 @@ namespace QL_CuaHang.GUI
             }
         }
 
+        // Nút tìm kiếm hóa đơn
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             string maHoaDon = txtNhapCanTim.Text.Trim();
@@ -168,15 +184,12 @@ namespace QL_CuaHang.GUI
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            ThongTinHoaDon();
+            LoadDanhSachHoaDon();
         }
 
+        // Định dạng kiểu nhập textBox
         private void txttenkhachhang_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -185,7 +198,6 @@ namespace QL_CuaHang.GUI
                 MessageBox.Show("Vui lòng nhập ký tự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void txtNhapCanTim_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

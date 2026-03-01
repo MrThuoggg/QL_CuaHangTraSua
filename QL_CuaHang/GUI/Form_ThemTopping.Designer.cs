@@ -64,7 +64,7 @@
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2TextBox2.ForeColor = System.Drawing.Color.Navy;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(164, 4);
+            this.guna2TextBox2.Location = new System.Drawing.Point(246, 8);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
@@ -99,13 +99,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgdanhsachtopping.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgdanhsachtopping.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgdanhsachtopping.Location = new System.Drawing.Point(22, 158);
+            this.dgdanhsachtopping.Location = new System.Drawing.Point(22, 142);
             this.dgdanhsachtopping.Name = "dgdanhsachtopping";
             this.dgdanhsachtopping.ReadOnly = true;
             this.dgdanhsachtopping.RowHeadersVisible = false;
             this.dgdanhsachtopping.RowHeadersWidth = 51;
             this.dgdanhsachtopping.RowTemplate.Height = 24;
-            this.dgdanhsachtopping.Size = new System.Drawing.Size(320, 574);
+            this.dgdanhsachtopping.Size = new System.Drawing.Size(481, 590);
             this.dgdanhsachtopping.TabIndex = 14;
             this.dgdanhsachtopping.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgdanhsachtopping.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -218,7 +218,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Orange;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Navy;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(348, 142);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(509, 142);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(412, 590);
             this.guna2GroupBox1.TabIndex = 17;
@@ -335,7 +335,7 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Navy;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(22, 92);
+            this.guna2TextBox1.Location = new System.Drawing.Point(22, 83);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
@@ -352,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::QL_CuaHang.Properties.Resources.images;
-            this.ClientSize = new System.Drawing.Size(782, 764);
+            this.ClientSize = new System.Drawing.Size(947, 764);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.dgdanhsachtopping);
             this.Controls.Add(this.guna2TextBox1);

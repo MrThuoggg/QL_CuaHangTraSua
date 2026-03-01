@@ -128,6 +128,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_BaoCaoChiTiet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSet_HoaDon.cs">
+      <DependentUpon>DataSet_HoaDon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSet_HoaDon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,10 +141,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_QLDonHang.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSet_QLKhachHang.Designer.cs">
+    <Compile Include="DataSet\DataSet_QLNguyenLieu.cs">
+      <DependentUpon>DataSet_QLNguyenLieu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSet_QLNguyenLieu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_QLKhachHang.xsd</DependentUpon>
+      <DependentUpon>DataSet_QLNguyenLieu.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSet_QLNhanVien.cs">
       <DependentUpon>DataSet_QLNhanVien.xsd</DependentUpon>
@@ -185,11 +191,11 @@
     <Compile Include="GUI\Form_BaoCaoNhanVien.Designer.cs">
       <DependentUpon>Form_BaoCaoNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_BaoCao_KhachHang.cs">
+    <Compile Include="GUI\Form_BaoCao_NguyenLieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_BaoCao_KhachHang.Designer.cs">
-      <DependentUpon>Form_BaoCao_KhachHang.cs</DependentUpon>
+    <Compile Include="GUI\Form_BaoCao_NguyenLieu.Designer.cs">
+      <DependentUpon>Form_BaoCao_NguyenLieu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form_BaoCao_Topping.cs">
       <SubType>Form</SubType>
@@ -245,11 +251,11 @@
     <Compile Include="GUI\UC_QLDONHANG.Designer.cs">
       <DependentUpon>UC_QLDONHANG.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UC_QLKHANG.cs">
+    <Compile Include="GUI\UC_QLNGUYENLIEU.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UC_QLKHANG.Designer.cs">
-      <DependentUpon>UC_QLKHANG.cs</DependentUpon>
+    <Compile Include="GUI\UC_QLNGUYENLIEU.Designer.cs">
+      <DependentUpon>UC_QLNGUYENLIEU.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC_QLNHANVIEN.cs">
       <SubType>UserControl</SubType>
@@ -277,8 +283,8 @@
     <EmbeddedResource Include="GUI\Form_BaoCaoNhanVien.resx">
       <DependentUpon>Form_BaoCaoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_BaoCao_KhachHang.resx">
-      <DependentUpon>Form_BaoCao_KhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_BaoCao_NguyenLieu.resx">
+      <DependentUpon>Form_BaoCao_NguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_BaoCao_Topping.resx">
       <DependentUpon>Form_BaoCao_Topping.cs</DependentUpon>
@@ -307,8 +313,8 @@
     <EmbeddedResource Include="GUI\UC_QLDONHANG.resx">
       <DependentUpon>UC_QLDONHANG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UC_QLKHANG.resx">
-      <DependentUpon>UC_QLKHANG.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UC_QLNGUYENLIEU.resx">
+      <DependentUpon>UC_QLNGUYENLIEU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC_QLNHANVIEN.resx">
       <DependentUpon>UC_QLNHANVIEN.cs</DependentUpon>
@@ -321,7 +327,7 @@
     <EmbeddedResource Include="Report\Report_BaoCaoChiTiet.rdlc" />
     <EmbeddedResource Include="Report\Report_DonHang.rdlc" />
     <EmbeddedResource Include="Report\Report_HoaDon.rdlc" />
-    <EmbeddedResource Include="Report\Report_KhachHang.rdlc" />
+    <EmbeddedResource Include="Report\Report_NguyenLieu.rdlc" />
     <EmbeddedResource Include="Report\Report_NhanVien.rdlc" />
     <EmbeddedResource Include="Report\Report_Topping.rdlc" />
     <EmbeddedResource Include="Report\Report_TraSua.rdlc" />
@@ -359,16 +365,16 @@
     <None Include="DataSet\DataSet_QLDonHang.xss">
       <DependentUpon>DataSet_QLDonHang.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSet_QLKhachHang.xsc">
-      <DependentUpon>DataSet_QLKhachHang.xsd</DependentUpon>
+    <None Include="DataSet\DataSet_QLNguyenLieu.xsc">
+      <DependentUpon>DataSet_QLNguyenLieu.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSet_QLKhachHang.xsd">
+    <None Include="DataSet\DataSet_QLNguyenLieu.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_QLKhachHang.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet_QLNguyenLieu.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet\DataSet_QLKhachHang.xss">
-      <DependentUpon>DataSet_QLKhachHang.xsd</DependentUpon>
+    <None Include="DataSet\DataSet_QLNguyenLieu.xss">
+      <DependentUpon>DataSet_QLNguyenLieu.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSet_QLNhanVien.xsc">
       <DependentUpon>DataSet_QLNhanVien.xsd</DependentUpon>
@@ -465,6 +471,8 @@
     <None Include="Resources\TimKiem_XoaPhong.jpg" />
     <None Include="Resources\Remove-TimKiem.png" />
     <None Include="Resources\calculator.png" />
+    <None Include="bin\Debug\z5933815489693_a72dbde6e9ff3f72743d692af603791a.jpg" />
+    <None Include="bin\Debug\Remove-bg.ai_1729073212271.png" />
     <Content Include="BUS\DB.txt" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

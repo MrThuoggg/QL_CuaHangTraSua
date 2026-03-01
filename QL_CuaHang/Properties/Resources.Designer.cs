@@ -693,6 +693,16 @@ namespace QL_CuaHang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Remove_bg_ai_1729073212271 {
+            get {
+                object obj = ResourceManager.GetObject("Remove-bg.ai_1729073212271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Remove_bg_ai_1729073579208 {
             get {
                 object obj = ResourceManager.GetObject("Remove-bg.ai_1729073579208", resourceCulture);
@@ -786,6 +796,16 @@ namespace QL_CuaHang.Properties {
         internal static System.Drawing.Bitmap z5933815440277_8fdf648a9d10cf44f515bacd6ede2de0 {
             get {
                 object obj = ResourceManager.GetObject("z5933815440277_8fdf648a9d10cf44f515bacd6ede2de0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5933815489693_a72dbde6e9ff3f72743d692af603791a {
+            get {
+                object obj = ResourceManager.GetObject("z5933815489693_a72dbde6e9ff3f72743d692af603791a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

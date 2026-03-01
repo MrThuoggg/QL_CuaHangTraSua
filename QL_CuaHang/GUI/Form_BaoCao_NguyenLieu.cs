@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QL_CuaHang.GUI
 {
-    public partial class Form_BaoCao_KhachHang : Form
+    public partial class Form_BaoCao_NguyenLieu : Form
     {
-        public Form_BaoCao_KhachHang()
+        public Form_BaoCao_NguyenLieu()
         {
             InitializeComponent();
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
@@ -25,11 +25,16 @@ namespace QL_CuaHang.GUI
         private void Form_BaoCao_KhachHang_Load(object sender, EventArgs e)
         {
 
-            reportViewer1.LocalReport.ReportEmbeddedResource = "QL_CuaHang.Report.Report_KhachHang.rdlc"; // Tên namespace và tên file RDLC ( địa chỉ dẫn )
+            reportViewer1.LocalReport.ReportEmbeddedResource = "QL_CuaHang.Report.Report_NguyenLieu.rdlc"; // Tên namespace và tên file RDLC ( địa chỉ dẫn )
             reportViewer1.LocalReport.DataSources.Clear();
-            DataTable dt = MenuDAO.HoaDonReport();
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("KhachHang", dt));
+            DataTable dt = MenuDAO.ThongTinNguyenLieu();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("QLNguyenLieu", dt));
             reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

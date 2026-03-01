@@ -20,17 +20,17 @@ namespace QL_CuaHang.DataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_QLKhachHang")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_QLNguyenLieu")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet_QLKhachHang : global::System.Data.DataSet {
+    public partial class DataSet_QLNguyenLieu : global::System.Data.DataSet {
         
-        private QLKhachHangDataTable tableQLKhachHang;
+        private QLNguyenLieuDataTable tableQLNguyenLieu;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataSet_QLKhachHang() {
+        public DataSet_QLNguyenLieu() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace QL_CuaHang.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DataSet_QLKhachHang(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet_QLNguyenLieu(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace QL_CuaHang.DataSet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["QLKhachHang"] != null)) {
-                    base.Tables.Add(new QLKhachHangDataTable(ds.Tables["QLKhachHang"]));
+                if ((ds.Tables["QLNguyenLieu"] != null)) {
+                    base.Tables.Add(new QLNguyenLieuDataTable(ds.Tables["QLNguyenLieu"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace QL_CuaHang.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public QLKhachHangDataTable QLKhachHang {
+        public QLNguyenLieuDataTable QLNguyenLieu {
             get {
-                return this.tableQLKhachHang;
+                return this.tableQLNguyenLieu;
             }
         }
         
@@ -127,7 +127,7 @@ namespace QL_CuaHang.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet_QLKhachHang cln = ((DataSet_QLKhachHang)(base.Clone()));
+            DataSet_QLNguyenLieu cln = ((DataSet_QLNguyenLieu)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace QL_CuaHang.DataSet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["QLKhachHang"] != null)) {
-                    base.Tables.Add(new QLKhachHangDataTable(ds.Tables["QLKhachHang"]));
+                if ((ds.Tables["QLNguyenLieu"] != null)) {
+                    base.Tables.Add(new QLNguyenLieuDataTable(ds.Tables["QLNguyenLieu"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace QL_CuaHang.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableQLKhachHang = ((QLKhachHangDataTable)(base.Tables["QLKhachHang"]));
+            this.tableQLNguyenLieu = ((QLNguyenLieuDataTable)(base.Tables["QLNguyenLieu"]));
             if ((initTable == true)) {
-                if ((this.tableQLKhachHang != null)) {
-                    this.tableQLKhachHang.InitVars();
+                if ((this.tableQLNguyenLieu != null)) {
+                    this.tableQLNguyenLieu.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace QL_CuaHang.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet_QLKhachHang";
+            this.DataSetName = "DataSet_QLNguyenLieu";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet_QLKhachHang.xsd";
+            this.Namespace = "http://tempuri.org/DataSet_QLNguyenLieu.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableQLKhachHang = new QLKhachHangDataTable();
-            base.Tables.Add(this.tableQLKhachHang);
+            this.tableQLNguyenLieu = new QLNguyenLieuDataTable();
+            base.Tables.Add(this.tableQLNguyenLieu);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeQLKhachHang() {
+        private bool ShouldSerializeQLNguyenLieu() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace QL_CuaHang.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet_QLKhachHang ds = new DataSet_QLKhachHang();
+            DataSet_QLNguyenLieu ds = new DataSet_QLNguyenLieu();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,31 @@ namespace QL_CuaHang.DataSet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void QLKhachHangRowChangeEventHandler(object sender, QLKhachHangRowChangeEvent e);
+        public delegate void QLNguyenLieuRowChangeEventHandler(object sender, QLNguyenLieuRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class QLKhachHangDataTable : global::System.Data.TypedTableBase<QLKhachHangRow> {
+        public partial class QLNguyenLieuDataTable : global::System.Data.TypedTableBase<QLNguyenLieuRow> {
             
-            private global::System.Data.DataColumn columnMaHoaDon;
+            private global::System.Data.DataColumn columnMaNguyenLieu;
             
-            private global::System.Data.DataColumn columnTenKhachHang;
+            private global::System.Data.DataColumn columnTenNguyenLieu;
             
-            private global::System.Data.DataColumn columnNgayLap;
+            private global::System.Data.DataColumn columnDonViTinh;
             
-            private global::System.Data.DataColumn columnTongTien;
+            private global::System.Data.DataColumn columnGiaNhap;
+            
+            private global::System.Data.DataColumn columnTonKho;
+            
+            private global::System.Data.DataColumn columnTonKhoToiThieu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangDataTable() {
-                this.TableName = "QLKhachHang";
+            public QLNguyenLieuDataTable() {
+                this.TableName = "QLNguyenLieu";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +302,7 @@ namespace QL_CuaHang.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal QLKhachHangDataTable(global::System.Data.DataTable table) {
+            internal QLNguyenLieuDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +319,56 @@ namespace QL_CuaHang.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected QLKhachHangDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected QLNguyenLieuDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MaHoaDonColumn {
+            public global::System.Data.DataColumn MaNguyenLieuColumn {
                 get {
-                    return this.columnMaHoaDon;
+                    return this.columnMaNguyenLieu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TenKhachHangColumn {
+            public global::System.Data.DataColumn TenNguyenLieuColumn {
                 get {
-                    return this.columnTenKhachHang;
+                    return this.columnTenNguyenLieu;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NgayLapColumn {
+            public global::System.Data.DataColumn DonViTinhColumn {
                 get {
-                    return this.columnNgayLap;
+                    return this.columnDonViTinh;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TongTienColumn {
+            public global::System.Data.DataColumn GiaNhapColumn {
                 get {
-                    return this.columnTongTien;
+                    return this.columnGiaNhap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TonKhoColumn {
+                get {
+                    return this.columnTonKho;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TonKhoToiThieuColumn {
+                get {
+                    return this.columnTonKhoToiThieu;
                 }
             }
             
@@ -363,48 +383,50 @@ namespace QL_CuaHang.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangRow this[int index] {
+            public QLNguyenLieuRow this[int index] {
                 get {
-                    return ((QLKhachHangRow)(this.Rows[index]));
+                    return ((QLNguyenLieuRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event QLKhachHangRowChangeEventHandler QLKhachHangRowChanging;
+            public event QLNguyenLieuRowChangeEventHandler QLNguyenLieuRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event QLKhachHangRowChangeEventHandler QLKhachHangRowChanged;
+            public event QLNguyenLieuRowChangeEventHandler QLNguyenLieuRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event QLKhachHangRowChangeEventHandler QLKhachHangRowDeleting;
+            public event QLNguyenLieuRowChangeEventHandler QLNguyenLieuRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event QLKhachHangRowChangeEventHandler QLKhachHangRowDeleted;
+            public event QLNguyenLieuRowChangeEventHandler QLNguyenLieuRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddQLKhachHangRow(QLKhachHangRow row) {
+            public void AddQLNguyenLieuRow(QLNguyenLieuRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangRow AddQLKhachHangRow(string MaHoaDon, string TenKhachHang, string NgayLap, string TongTien) {
-                QLKhachHangRow rowQLKhachHangRow = ((QLKhachHangRow)(this.NewRow()));
+            public QLNguyenLieuRow AddQLNguyenLieuRow(string MaNguyenLieu, string TenNguyenLieu, string DonViTinh, decimal GiaNhap, string TonKho, string TonKhoToiThieu) {
+                QLNguyenLieuRow rowQLNguyenLieuRow = ((QLNguyenLieuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MaHoaDon,
-                        TenKhachHang,
-                        NgayLap,
-                        TongTien};
-                rowQLKhachHangRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowQLKhachHangRow);
-                return rowQLKhachHangRow;
+                        MaNguyenLieu,
+                        TenNguyenLieu,
+                        DonViTinh,
+                        GiaNhap,
+                        TonKho,
+                        TonKhoToiThieu};
+                rowQLNguyenLieuRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQLNguyenLieuRow);
+                return rowQLNguyenLieuRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                QLKhachHangDataTable cln = ((QLKhachHangDataTable)(base.Clone()));
+                QLNguyenLieuDataTable cln = ((QLNguyenLieuDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,55 +434,61 @@ namespace QL_CuaHang.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new QLKhachHangDataTable();
+                return new QLNguyenLieuDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnMaHoaDon = base.Columns["MaHoaDon"];
-                this.columnTenKhachHang = base.Columns["TenKhachHang"];
-                this.columnNgayLap = base.Columns["NgayLap"];
-                this.columnTongTien = base.Columns["TongTien"];
+                this.columnMaNguyenLieu = base.Columns["MaNguyenLieu"];
+                this.columnTenNguyenLieu = base.Columns["TenNguyenLieu"];
+                this.columnDonViTinh = base.Columns["DonViTinh"];
+                this.columnGiaNhap = base.Columns["GiaNhap"];
+                this.columnTonKho = base.Columns["TonKho"];
+                this.columnTonKhoToiThieu = base.Columns["TonKhoToiThieu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnMaHoaDon = new global::System.Data.DataColumn("MaHoaDon", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaHoaDon);
-                this.columnTenKhachHang = new global::System.Data.DataColumn("TenKhachHang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTenKhachHang);
-                this.columnNgayLap = new global::System.Data.DataColumn("NgayLap", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNgayLap);
-                this.columnTongTien = new global::System.Data.DataColumn("TongTien", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTongTien);
+                this.columnMaNguyenLieu = new global::System.Data.DataColumn("MaNguyenLieu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaNguyenLieu);
+                this.columnTenNguyenLieu = new global::System.Data.DataColumn("TenNguyenLieu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenNguyenLieu);
+                this.columnDonViTinh = new global::System.Data.DataColumn("DonViTinh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonViTinh);
+                this.columnGiaNhap = new global::System.Data.DataColumn("GiaNhap", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGiaNhap);
+                this.columnTonKho = new global::System.Data.DataColumn("TonKho", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTonKho);
+                this.columnTonKhoToiThieu = new global::System.Data.DataColumn("TonKhoToiThieu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTonKhoToiThieu);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangRow NewQLKhachHangRow() {
-                return ((QLKhachHangRow)(this.NewRow()));
+            public QLNguyenLieuRow NewQLNguyenLieuRow() {
+                return ((QLNguyenLieuRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new QLKhachHangRow(builder);
+                return new QLNguyenLieuRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(QLKhachHangRow);
+                return typeof(QLNguyenLieuRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.QLKhachHangRowChanged != null)) {
-                    this.QLKhachHangRowChanged(this, new QLKhachHangRowChangeEvent(((QLKhachHangRow)(e.Row)), e.Action));
+                if ((this.QLNguyenLieuRowChanged != null)) {
+                    this.QLNguyenLieuRowChanged(this, new QLNguyenLieuRowChangeEvent(((QLNguyenLieuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +496,8 @@ namespace QL_CuaHang.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.QLKhachHangRowChanging != null)) {
-                    this.QLKhachHangRowChanging(this, new QLKhachHangRowChangeEvent(((QLKhachHangRow)(e.Row)), e.Action));
+                if ((this.QLNguyenLieuRowChanging != null)) {
+                    this.QLNguyenLieuRowChanging(this, new QLNguyenLieuRowChangeEvent(((QLNguyenLieuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +505,8 @@ namespace QL_CuaHang.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.QLKhachHangRowDeleted != null)) {
-                    this.QLKhachHangRowDeleted(this, new QLKhachHangRowChangeEvent(((QLKhachHangRow)(e.Row)), e.Action));
+                if ((this.QLNguyenLieuRowDeleted != null)) {
+                    this.QLNguyenLieuRowDeleted(this, new QLNguyenLieuRowChangeEvent(((QLNguyenLieuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +514,14 @@ namespace QL_CuaHang.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.QLKhachHangRowDeleting != null)) {
-                    this.QLKhachHangRowDeleting(this, new QLKhachHangRowChangeEvent(((QLKhachHangRow)(e.Row)), e.Action));
+                if ((this.QLNguyenLieuRowDeleting != null)) {
+                    this.QLNguyenLieuRowDeleting(this, new QLNguyenLieuRowChangeEvent(((QLNguyenLieuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveQLKhachHangRow(QLKhachHangRow row) {
+            public void RemoveQLNguyenLieuRow(QLNguyenLieuRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -502,7 +530,7 @@ namespace QL_CuaHang.DataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet_QLKhachHang ds = new DataSet_QLKhachHang();
+                DataSet_QLNguyenLieu ds = new DataSet_QLNguyenLieu();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -520,7 +548,7 @@ namespace QL_CuaHang.DataSet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "QLKhachHangDataTable";
+                attribute2.FixedValue = "QLNguyenLieuDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,127 +592,183 @@ namespace QL_CuaHang.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class QLKhachHangRow : global::System.Data.DataRow {
+        public partial class QLNguyenLieuRow : global::System.Data.DataRow {
             
-            private QLKhachHangDataTable tableQLKhachHang;
+            private QLNguyenLieuDataTable tableQLNguyenLieu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal QLKhachHangRow(global::System.Data.DataRowBuilder rb) : 
+            internal QLNguyenLieuRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableQLKhachHang = ((QLKhachHangDataTable)(this.Table));
+                this.tableQLNguyenLieu = ((QLNguyenLieuDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string MaHoaDon {
+            public string MaNguyenLieu {
                 get {
                     try {
-                        return ((string)(this[this.tableQLKhachHang.MaHoaDonColumn]));
+                        return ((string)(this[this.tableQLNguyenLieu.MaNguyenLieuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MaHoaDon\' in table \'QLKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaNguyenLieu\' in table \'QLNguyenLieu\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableQLKhachHang.MaHoaDonColumn] = value;
+                    this[this.tableQLNguyenLieu.MaNguyenLieuColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TenKhachHang {
+            public string TenNguyenLieu {
                 get {
                     try {
-                        return ((string)(this[this.tableQLKhachHang.TenKhachHangColumn]));
+                        return ((string)(this[this.tableQLNguyenLieu.TenNguyenLieuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TenKhachHang\' in table \'QLKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenNguyenLieu\' in table \'QLNguyenLieu\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableQLKhachHang.TenKhachHangColumn] = value;
+                    this[this.tableQLNguyenLieu.TenNguyenLieuColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NgayLap {
+            public string DonViTinh {
                 get {
                     try {
-                        return ((string)(this[this.tableQLKhachHang.NgayLapColumn]));
+                        return ((string)(this[this.tableQLNguyenLieu.DonViTinhColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NgayLap\' in table \'QLKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonViTinh\' in table \'QLNguyenLieu\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableQLKhachHang.NgayLapColumn] = value;
+                    this[this.tableQLNguyenLieu.DonViTinhColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TongTien {
+            public decimal GiaNhap {
                 get {
                     try {
-                        return ((string)(this[this.tableQLKhachHang.TongTienColumn]));
+                        return ((decimal)(this[this.tableQLNguyenLieu.GiaNhapColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TongTien\' in table \'QLKhachHang\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GiaNhap\' in table \'QLNguyenLieu\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableQLKhachHang.TongTienColumn] = value;
+                    this[this.tableQLNguyenLieu.GiaNhapColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMaHoaDonNull() {
-                return this.IsNull(this.tableQLKhachHang.MaHoaDonColumn);
+            public string TonKho {
+                get {
+                    try {
+                        return ((string)(this[this.tableQLNguyenLieu.TonKhoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TonKho\' in table \'QLNguyenLieu\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQLNguyenLieu.TonKhoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMaHoaDonNull() {
-                this[this.tableQLKhachHang.MaHoaDonColumn] = global::System.Convert.DBNull;
+            public string TonKhoToiThieu {
+                get {
+                    try {
+                        return ((string)(this[this.tableQLNguyenLieu.TonKhoToiThieuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TonKhoToiThieu\' in table \'QLNguyenLieu\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQLNguyenLieu.TonKhoToiThieuColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTenKhachHangNull() {
-                return this.IsNull(this.tableQLKhachHang.TenKhachHangColumn);
+            public bool IsMaNguyenLieuNull() {
+                return this.IsNull(this.tableQLNguyenLieu.MaNguyenLieuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTenKhachHangNull() {
-                this[this.tableQLKhachHang.TenKhachHangColumn] = global::System.Convert.DBNull;
+            public void SetMaNguyenLieuNull() {
+                this[this.tableQLNguyenLieu.MaNguyenLieuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNgayLapNull() {
-                return this.IsNull(this.tableQLKhachHang.NgayLapColumn);
+            public bool IsTenNguyenLieuNull() {
+                return this.IsNull(this.tableQLNguyenLieu.TenNguyenLieuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNgayLapNull() {
-                this[this.tableQLKhachHang.NgayLapColumn] = global::System.Convert.DBNull;
+            public void SetTenNguyenLieuNull() {
+                this[this.tableQLNguyenLieu.TenNguyenLieuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTongTienNull() {
-                return this.IsNull(this.tableQLKhachHang.TongTienColumn);
+            public bool IsDonViTinhNull() {
+                return this.IsNull(this.tableQLNguyenLieu.DonViTinhColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTongTienNull() {
-                this[this.tableQLKhachHang.TongTienColumn] = global::System.Convert.DBNull;
+            public void SetDonViTinhNull() {
+                this[this.tableQLNguyenLieu.DonViTinhColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGiaNhapNull() {
+                return this.IsNull(this.tableQLNguyenLieu.GiaNhapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGiaNhapNull() {
+                this[this.tableQLNguyenLieu.GiaNhapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTonKhoNull() {
+                return this.IsNull(this.tableQLNguyenLieu.TonKhoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTonKhoNull() {
+                this[this.tableQLNguyenLieu.TonKhoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTonKhoToiThieuNull() {
+                return this.IsNull(this.tableQLNguyenLieu.TonKhoToiThieuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTonKhoToiThieuNull() {
+                this[this.tableQLNguyenLieu.TonKhoToiThieuColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +776,22 @@ namespace QL_CuaHang.DataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class QLKhachHangRowChangeEvent : global::System.EventArgs {
+        public class QLNguyenLieuRowChangeEvent : global::System.EventArgs {
             
-            private QLKhachHangRow eventRow;
+            private QLNguyenLieuRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangRowChangeEvent(QLKhachHangRow row, global::System.Data.DataRowAction action) {
+            public QLNguyenLieuRowChangeEvent(QLNguyenLieuRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public QLKhachHangRow Row {
+            public QLNguyenLieuRow Row {
                 get {
                     return this.eventRow;
                 }

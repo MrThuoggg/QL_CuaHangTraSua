@@ -55,7 +55,7 @@ namespace QL_CuaHang.GUI
         private void qUẢNLÝKHÁCHHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            UC_QLKHANG ucqlkhachhang = new UC_QLKHANG();
+            UC_QLNGUYENLIEU ucqlkhachhang = new UC_QLNGUYENLIEU();
             ucqlkhachhang.Dock = DockStyle.Fill;
             panel2.Controls.Add(ucqlkhachhang);
         }
@@ -113,6 +113,11 @@ namespace QL_CuaHang.GUI
         }
 
         private void đỒUỐNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
         }

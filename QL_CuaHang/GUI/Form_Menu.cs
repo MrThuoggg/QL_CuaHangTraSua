@@ -19,7 +19,6 @@ namespace QL_CuaHang.GUI
             dgdanhsachtopping.RowHeadersVisible = false;
             dgOrder.RowHeadersVisible = false;
         }
-
         private void DanhSachTraSua()
         {
             DataTable dt = new DataTable();
@@ -68,8 +67,10 @@ namespace QL_CuaHang.GUI
             DanhSachOrder();
             dgdanhsachtrasua.Columns["Gia"].DefaultCellStyle.Format = "N0";
             dgdanhsachtrasua.Columns["Gia"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+
             dgdanhsachtopping.Columns["Gia"].DefaultCellStyle.Format = "N0";
             dgdanhsachtopping.Columns["Gia"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
+
             dgOrder.Columns["GiaTopping"].DefaultCellStyle.Format = "N0";
             dgOrder.Columns["GiaTopping"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
 

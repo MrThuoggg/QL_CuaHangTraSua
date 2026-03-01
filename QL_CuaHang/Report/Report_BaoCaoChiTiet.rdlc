@@ -1132,7 +1132,7 @@
             <Top>7.9175in</Top>
             <Left>0.09194in</Left>
             <Height>0.5in</Height>
-            <Width>6.30333in</Width>
+            <Width>6.30334in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1310,19 +1310,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="Logo">
-              <Source>Embedded</Source>
-              <Value>z5933842855353_acb9cbc7b2bb2b8aca02b60801b09e2c</Value>
-              <Sizing>FitProportional</Sizing>
-              <Height>0.99029in</Height>
-              <Width>1.02083in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
           </ReportItems>
           <Style>
             <Border>
@@ -1363,7 +1350,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Trà sữa Thường-Hưng</Value>
+                      <Value>Trà sữa MinhThuong</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>

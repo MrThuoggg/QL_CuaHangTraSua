@@ -361,18 +361,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Logo">
-          <Source>Embedded</Source>
-          <Value>z5933842855353_acb9cbc7b2bb2b8aca02b60801b09e2c</Value>
-          <Sizing>FitProportional</Sizing>
-          <Height>0.93056in</Height>
-          <Width>0.92917in</Width>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox10">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -399,7 +387,6 @@
           <Left>1.65083in</Left>
           <Height>0.29167in</Height>
           <Width>3.11667in</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border />
             <PaddingLeft>2pt</PaddingLeft>
@@ -429,7 +416,7 @@
           <Left>4.8in</Left>
           <Height>0.25in</Height>
           <Width>1.7in</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -462,7 +449,7 @@
           <Left>3.99667in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -493,7 +480,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Trà sữa Thường-Hưng </Value>
+                  <Value>Trà sữa MinhThuong </Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
