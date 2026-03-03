@@ -441,7 +441,7 @@ namespace QL_CuaHang.DAO
 
         // lấy dữ liệu để in lên report
         // có kiểm tra kiểu dữ liệu
-        public static DataTable LayDuLieuRseport(int maHoaDon)
+        public static DataTable LayDuLieuReport(int maHoaDon)
         {
             string sql = @"SELECT 
         ts.TenTraSua,

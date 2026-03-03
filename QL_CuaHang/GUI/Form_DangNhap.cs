@@ -43,8 +43,20 @@ namespace QL_CuaHang.GUI
 
         private void Form_DangNhap_Load(object sender, EventArgs e)
         {
-            gunaMatKhau.UseSystemPasswordChar = true; 
-            btpassword.Text = "Hiện"; 
+            try
+            {
+                gunaMatKhau.UseSystemPasswordChar = true;
+                btpassword.Text = "Hiện";
+            }
+            catch (Exception ex)
+            {
+                // thông báo lỗi
+                MessageBox.Show("Lỗi khởi động ứng dụng nghiêm trọng!\n\n" +
+                                        "Message: " + ex.Message + "\n\n" +
+                                        "StackTrace: " + ex.StackTrace + "\n\n" +
+                                        "InnerException: " + (ex.InnerException?.Message ?? "Không có"),
+                                        "Lỗi Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         public static string loaitk;
