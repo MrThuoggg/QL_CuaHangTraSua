@@ -1,4 +1,3 @@
-- Cài đặt DB -> QL_CuaHang -> QL_CuaHang -> BUS -> DB
-- Sử dụng MySQL để import DB
-- Clone dự án
-- Sử dụng VS Code chạy trên local Ctrl + F5
+- Cài đặt MySQL WorkBench 8.0 CE -> New DB QL_CuaHangTraSua -> Import file QL_CuaHang.sql
+- Cài đặt file Setup_QLCuaHangTraSua.exe
+- Run exe.
