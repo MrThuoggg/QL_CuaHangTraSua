@@ -22,6 +22,7 @@ namespace QL_CuaHang.GUI
 
         }
 
+        // Định nghĩa loại tài khoản
         private void Form_QuanLi_Load(object sender, EventArgs e)
         {
             string loaitk = Form_DangNhap.loaitk;
@@ -44,6 +45,8 @@ namespace QL_CuaHang.GUI
             }
         }
 
+
+        // Load MenuStrip
         private void qUẢNLÝĐƠNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
@@ -91,6 +94,9 @@ namespace QL_CuaHang.GUI
             frm_themdoUong.Show();
         }
 
+
+
+
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -120,6 +126,12 @@ namespace QL_CuaHang.GUI
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tẠOTÀIKHOẢNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_TaoTaiKhoan frmtaotaikhoan = new Form_TaoTaiKhoan();
+            frmtaotaikhoan.Show();
         }
     }
 }

@@ -110,7 +110,7 @@ namespace QL_CuaHang.GUI
             try
             {
 
-                int soLuongDon = dgdanhsachhoadon.Rows.Count - 1;
+                int soLuongDon = dgdanhsachhoadon.Rows.Count;
                 txtsoluongdon.Text = soLuongDon.ToString();
 
                 decimal tongTien = 0;

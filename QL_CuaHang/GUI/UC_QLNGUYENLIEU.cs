@@ -30,6 +30,7 @@ namespace QL_CuaHang.GUI
             txttonkhotoithieu.Clear();
         }
 
+        // Hiển thị danh sách
         public void LoadDanhSachNguyenLieu()
         {
             try
@@ -71,7 +72,7 @@ namespace QL_CuaHang.GUI
             {
                 //luôn lấy dữ liệu từ datagrid mới nhất
                 DataTable dt = (DataTable)dgdanhsachnguyenlieu.DataSource;
-                int tongNguyenLieu = dgdanhsachnguyenlieu.Rows.Count - 1;
+                int tongNguyenLieu = dgdanhsachnguyenlieu.Rows.Count;
                 decimal tongGiaTri = 0;
 
                 if(dt == null || dt.Rows.Count == 0)
@@ -87,7 +88,7 @@ namespace QL_CuaHang.GUI
                     tongGiaTri += tonKho * giaNhap;
                 }
                 tongnguyenlieu.Text = tongNguyenLieu.ToString();
-                tonggiatri.Text = tongGiaTri.ToString("N0") + " đ";
+                tonggiatri.Text = tongGiaTri.ToString("N0") + " VND";
             }
             catch (Exception ex)
             {

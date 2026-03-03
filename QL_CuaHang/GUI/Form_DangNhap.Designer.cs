@@ -67,7 +67,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Khaki;
             this.guna2Button1.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.guna2Button1.Location = new System.Drawing.Point(741, 362);
+            this.guna2Button1.Location = new System.Drawing.Point(742, 362);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(173, 73);
             this.guna2Button1.TabIndex = 3;
@@ -102,9 +102,9 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Khaki;
             this.guna2Button3.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.guna2Button3.Location = new System.Drawing.Point(942, 362);
+            this.guna2Button3.Location = new System.Drawing.Point(921, 362);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(173, 73);
+            this.guna2Button3.Size = new System.Drawing.Size(174, 73);
             this.guna2Button3.TabIndex = 6;
             this.guna2Button3.Text = "thoát";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -181,7 +181,7 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::QL_CuaHang.Properties.Resources.imgminion;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(834, 466);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(832, 454);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(189, 176);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -199,9 +199,9 @@
             this.btpassword.FillColor = System.Drawing.Color.Khaki;
             this.btpassword.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
             this.btpassword.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btpassword.Location = new System.Drawing.Point(987, 276);
+            this.btpassword.Location = new System.Drawing.Point(1005, 276);
             this.btpassword.Name = "btpassword";
-            this.btpassword.Size = new System.Drawing.Size(128, 56);
+            this.btpassword.Size = new System.Drawing.Size(110, 56);
             this.btpassword.TabIndex = 9;
             this.btpassword.Text = "Hiện";
             this.btpassword.Click += new System.EventHandler(this.btpassword_Click);

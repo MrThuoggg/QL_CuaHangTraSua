@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,87 +13,31 @@ namespace QL_CuaHang.GUI
 {
     public partial class Form_TinhLuongNV : Form
     {
-        private const decimal LUONG_MOT_NGAY = 168000M;
-        private const decimal PHU_CAP_CUOI_TUAN = 500000M;
-        private const decimal TRU_TIEN_NGAY_NGHI = 50000M;
+        private decimal luongNgay = 0M;
+        private const decimal TRU_TIEN_NGHI = 50000M;
+        private int idNhanVienHienTai = 0;
+        private CultureInfo vietCulture = new CultureInfo("vi-VN");
         public Form_TinhLuongNV()
         {
             InitializeComponent();
-            CaiDatNgayThang();
         }
-        private void CaiDatNgayThang()
-        {
- 
-            dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
-            dtpNgayBatDau.CustomFormat = "dd MMMM, yyyy";
-            dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
-            dtpNgayKetThuc.CustomFormat = "dd MMMM, yyyy";
-        }
-        private int TinhNgayLamViec(DateTime ngayBatDau, DateTime ngayKetThuc)
-        {
-            // Tính tổng số ngày làm việc
-            int soNgay = 0;
-            for (DateTime ngay = ngayBatDau; ngay <= ngayKetThuc; ngay = ngay.AddDays(1))
-            {
-                if (ngay.DayOfWeek != DayOfWeek.Saturday && ngay.DayOfWeek != DayOfWeek.Sunday)
-                    soNgay++;
-                else if (ngay.DayOfWeek == DayOfWeek.Sunday && chkLamChuNhat.Checked)
-                    soNgay++;
-
-            }
-            return soNgay;
-        }
-
-
-        private void CapNhatSoNgayLam()
-        {
-            try
-            {
-                int soNgay = TinhNgayLamViec(dtpNgayBatDau.Value, dtpNgayKetThuc.Value);
-                txtsongaylam.Text = $"Số ngày làm việc: {soNgay} ngày";
-
-                int soNgayChuNhat = 0;
-                if (chkLamChuNhat.Checked)
-                {
-                    for (DateTime ngay = dtpNgayBatDau.Value; ngay <= dtpNgayKetThuc.Value; ngay = ngay.AddDays(1))
-                    {
-                        if (ngay.DayOfWeek == DayOfWeek.Sunday)
-                            soNgayChuNhat++;
-
-
-                    }
-                }
-                lblSoNgayChuNhat.Text = $"Số ngày Chủ nhật đã làm: {soNgayChuNhat} ngày";
-            }
-            catch (Exception)
-            {
-                txtsongaylam.Text = "Số ngày làm việc: 0 ngày";
-                lblSoNgayChuNhat.Text = "Số ngày Chủ nhật đã làm: 0 ngày";
-            }
-        }
-
-
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            CapNhatSoNgayLam();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void Form_TinhLuongNV_Load(object sender, EventArgs e)
         {
 
@@ -100,155 +45,168 @@ namespace QL_CuaHang.GUI
 
         private void bttinhluong_Click(object sender, EventArgs e)
         {
-            try
+            if(idNhanVienHienTai == 0)
             {
-                DateTime ngayBatDau = dtpNgayBatDau.Value;
-                DateTime ngayKetThuc = dtpNgayKetThuc.Value;
-                if (ngayKetThuc < ngayBatDau)
-                {
-                    MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!", "Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                int soNgayLam = TinhNgayLamViec(ngayBatDau, ngayKetThuc);
-
-                if (!decimal.TryParse(txtSoNgayNghi.Text, out decimal soNgayNghi))
-                    soNgayNghi = 0;
-
-                decimal tongLuong = (soNgayLam * LUONG_MOT_NGAY) - (soNgayNghi * TRU_TIEN_NGAY_NGHI);
-                int soNgayChuNhat = 0;
-                if (chkLamChuNhat.Checked)
-                {
-                    for (DateTime ngay = ngayBatDau; ngay <= ngayKetThuc; ngay = ngay.AddDays(1))
-                    {
-                        if (ngay.DayOfWeek == DayOfWeek.Sunday)
-                            soNgayChuNhat++;
-                    }
-                    tongLuong += soNgayChuNhat * PHU_CAP_CUOI_TUAN;
-                }
-                txtTongLuong.Text = string.Format("{0:N0} VNĐ", tongLuong);
+                MessageBox.Show("Vui lòng kiểm tra ID nhân viên", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
+            string sql = @"
+                SELECT Ngay 
+                FROM DiemDanh 
+                WHERE IDNhanVien = @ID 
+                AND TrangThai = 'CoMat'
+                AND YEAR(Ngay) = YEAR(CURDATE()) 
+                AND MONTH(Ngay) = MONTH(CURDATE())";
+            var pars= new Dictionary<string, object> { { "@ID", idNhanVienHienTai} };
+            DataTable dt = KetNoiCSDL.DocDuLieu(sql, pars);
+            int soNgayCong = dt.Rows.Count;
+            int soNgayCN = 0;
+            foreach(DataRow row in dt.Rows)
             {
-                MessageBox.Show("Đã xảy ra lỗi!!!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTime ngay = Convert.ToDateTime(row["Ngay"]);
+                if (ngay.DayOfWeek == DayOfWeek.Sunday) soNgayCN++;
             }
+            // Tính số ngày nghỉ
+            int soNgayNghi = 30 - soNgayCong;
+
+            //Tính lương
+            decimal tongLuongCoBan = soNgayCong * luongNgay;
+            decimal phuCapCN = soNgayCN * luongNgay;
+            decimal truNgayNghi = soNgayNghi * TRU_TIEN_NGHI;
+
+            decimal tongLuong = tongLuongCoBan + phuCapCN;
+
+            txtsongaydiemdanh.Text = $"{soNgayCong} ngày";
+            txtsongaynghi.Text = $"{soNgayNghi} ngày";
+            txtsongaylamCN.Text = $"{soNgayCN} ngày";
+            txtTongLuong.Text = tongLuong.ToString("N0", vietCulture) + " VND";
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void dtpNgayKetThuc_ValueChanged(object sender, EventArgs e)
         {
-            CapNhatSoNgayLam(); 
-        }
 
-        private void chkLamChuNhat_CheckedChanged(object sender, EventArgs e)
-        {
-            
         }
-
-        private void chkLamChuNhat_CheckedChanged_1(object sender, EventArgs e)
-        {
-            CapNhatSoNgayLam();
-        }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label10_Click_1(object sender, EventArgs e)
         {
 
         }
-
         private void txtsongaylam_Click(object sender, EventArgs e)
         {
 
         }
-
         private void guna2TextBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label8_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
         }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void label9_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
-
         private void txtTongLuong_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblSoNgayChuNhat_Click(object sender, EventArgs e)
+
+
+        // Nút lưu lương
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
+            if(idNhanVienHienTai == 0 || string.IsNullOrWhiteSpace(txtTongLuong.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra và tính lương trước khi lưu", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                int idNhanVien = int.Parse(txtIDNhanVien.Text.Trim());
+                string luongStr = txtTongLuong.Text.Replace(" VND", "").Replace(",", "").Trim();
+                decimal tongLuong = decimal.Parse(luongStr, vietCulture);
+                MenuDAO.ThemLuongNhanVien(idNhanVien, tongLuong);
+
+                MessageBox.Show("Lưu lương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lưu lương thất bại!\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // Nút kiểm tra dữ liệu nhân viên
+        private void btkiemtra_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtIDNhanVien.Text))
+            {
+                MessageBox.Show("Vui lòng nhập ID nhân viên đúng!!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(!int.TryParse(txtIDNhanVien.Text, out int idNhanVien))
+            {
+                MessageBox.Show("ID nhân viên phải là số!!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string layChucVu = "Select ChucVu FROM NhanVien Where ID = @ID";
+            var pars = new Dictionary<string, object> { {"@ID", idNhanVien} };
+            DataTable dt = KetNoiCSDL.DocDuLieu(layChucVu, pars);
+            if(dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            string ChucVu = dt.Rows[0]["ChucVu"].ToString();
+            luongNgay = ChucVu == "Nhân viên pha chế" ? 220000M : (ChucVu == "Nhân viên phục vụ" ? 185000M : 0M);
+
+            if(luongNgay == 0M)
+            {
+                MessageBox.Show("Chức vụ không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return;
+            }
+
+            int soNgayDiemDanh = LaySoNgayDiemDanh(idNhanVien);
+            idNhanVienHienTai = idNhanVien;
+            txtsongaydiemdanh.Text = soNgayDiemDanh.ToString();
+            txtchucvu.Text = ChucVu;
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private int LaySoNgayDiemDanh(int idNhanVien)
         {
-            try
-            {
-                string idNhanVienText = txtIDNhanVien.Text.Trim();
-                string tongLuongText = txtTongLuong.Text.Trim();
+            string sql = @"Select Count(*) as SoNgay From DiemDanh Where IDNhanVien = @ID and TrangThai = 'CoMat'";
+            var pars = new Dictionary<string, object> { {"@ID", idNhanVien} };
+            object result = KetNoiCSDL.ThucThiTruyVanLayGiaTri(sql, pars);
+            return result != null && result != DBNull.Value ? Convert.ToInt32(result) :0;
+        }
 
-                if (!int.TryParse(idNhanVienText, out int idNhanVien))
-                {
-                    MessageBox.Show("ID Nhân Viên không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-                if (!decimal.TryParse(tongLuongText.Replace(" VNĐ", "").Replace(",", ""), out decimal luongCoBan))
-                {
-                    MessageBox.Show("Tổng lương không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                MenuDAO.ThemLuongNhanVien(idNhanVien, luongCoBan);
-
-                MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi!!!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

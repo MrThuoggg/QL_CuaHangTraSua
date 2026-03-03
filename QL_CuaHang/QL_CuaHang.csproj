@@ -215,6 +215,12 @@
     <Compile Include="GUI\Form_DangNhap.Designer.cs">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Form_DiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form_DiemDanh.Designer.cs">
+      <DependentUpon>Form_DiemDanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,12 @@
     </Compile>
     <Compile Include="GUI\Form_QuanLi.Designer.cs">
       <DependentUpon>Form_QuanLi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form_TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form_TaoTaiKhoan.Designer.cs">
+      <DependentUpon>Form_TaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form_ThemDoUong.cs">
       <SubType>Form</SubType>
@@ -295,11 +307,17 @@
     <EmbeddedResource Include="GUI\Form_DangNhap.resx">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form_DiemDanh.resx">
+      <DependentUpon>Form_DiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_QuanLi.resx">
       <DependentUpon>Form_QuanLi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form_TaoTaiKhoan.resx">
+      <DependentUpon>Form_TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form_ThemDoUong.resx">
       <DependentUpon>Form_ThemDoUong.cs</DependentUpon>

@@ -13,6 +13,8 @@ namespace QL_CuaHang.GUI
 {
     public partial class Form_DangNhap : Form
     {
+        public static int idNhanVienHienTai = 0;
+        public static string tenDangNhap = "";
         public Form_DangNhap()
         {
             InitializeComponent();
@@ -66,6 +68,8 @@ namespace QL_CuaHang.GUI
                 }
                 else if (loaitk == "nhanvien")
                 {
+                    tenDangNhap = gunaTaiKhoan.Text.Trim();
+                    idNhanVienHienTai = Convert.ToInt32(dt.Rows[0]["IDNhanVien"] ?? 0);
                     Form_Menu frmMenu = new Form_Menu();
                     frmMenu.Show();
                 }
@@ -83,6 +87,7 @@ namespace QL_CuaHang.GUI
 
         }
 
+        // Nút ẩn-hiện password
         private void btpassword_Click(object sender, EventArgs e)
         {
             if (gunaMatKhau.UseSystemPasswordChar)
@@ -100,6 +105,12 @@ namespace QL_CuaHang.GUI
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Form_TaoTaiKhoan frmtaotaikhoan = new Form_TaoTaiKhoan();
+            frmtaotaikhoan.Show();
         }
     }
 }

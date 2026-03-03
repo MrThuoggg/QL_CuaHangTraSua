@@ -88,6 +88,24 @@ namespace QL_CuaHang.DAO
             cmd.ExecuteNonQuery();
             DongKetNoi();
         }
+        // Nếu sử dụng dictionary cần thêm -> không thay đổi lỗi: "Index was outside the bounds of the array"
+        public static void ThucThiTruyVan(string sql, Dictionary<string, object> parameters)
+        {
+            MoKetNoi();
+            MySqlCommand cmd = new MySqlCommand(sql, cnn);
+
+            if (parameters != null)
+            {
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                }
+            }
+
+            cmd.ExecuteNonQuery();
+            DongKetNoi();
+        }
+
 
         public static object ThucThiTruyVanLayGiaTri(string sql, params object[] parameters)
         {
@@ -107,5 +125,20 @@ namespace QL_CuaHang.DAO
             return ketQua;
         }
 
+        public static object ThucThiTruyVanLayGiaTri(string sql, Dictionary<string, object> parameters)
+        {
+            MoKetNoi();
+            MySqlCommand cmd = new MySqlCommand( sql, cnn);
+            if (parameters != null)
+            {
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                }
+            }
+            object ketQua = cmd.ExecuteScalar();
+            DongKetNoi();
+            return ketQua;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace QL_CuaHang.DAO
     internal class MenuDAO
     {
 
-        // Format datagridView
+        // Hàm Format datagridView
         public static void FormatDataGridView(DataGridView grid, float fontSize = 10f)
         {
             if (grid == null) return;
@@ -252,6 +252,12 @@ namespace QL_CuaHang.DAO
             KetNoiCSDL.ThucThiTruyVan(sqlNhanVien, "@ID", id);
         }
 
+        public static void ThemLuongNhanVien(int idNhanVien, decimal tongLuong)
+        {
+            string sql = "INSERT INTO LuongNhanVien (IDNhanVien, LuongCoBan) VALUES (@ID, @Luong)";
+            KetNoiCSDL.ThucThiTruyVan(sql, "@ID", idNhanVien, "@Luong", tongLuong);
+        }
+
 
 
 
@@ -374,23 +380,8 @@ namespace QL_CuaHang.DAO
 
 
 
-        // Phần code cho form tính lương nhân viên
-        // dùng để lưu lương nhân viên vừa tính vào database
-        public static void ThemLuongNhanVien(int idNhanVien, decimal luongCoBan)
-        {
-            string sql = @"INSERT INTO LuongNhanVien (IDNhanVien, LuongCoBan) VALUES (@IDNhanVien, @LuongCoBan)";
-            KetNoiCSDL.ThucThiTruyVan(sql, "@IDNhanVien", idNhanVien, "@LuongCoBan", luongCoBan);
-        }
-
-
-
-
-
-
 
         // phần code cho in hóa đơn 
-
-
         //tạo ra 1 mã hoá đơn mới
         public static int LayMaHoaDonMoiNhat()
         {
@@ -450,7 +441,7 @@ namespace QL_CuaHang.DAO
 
         // lấy dữ liệu để in lên report
         // có kiểm tra kiểu dữ liệu
-        public static DataTable LayDuLieuReport(int maHoaDon)
+        public static DataTable LayDuLieuRseport(int maHoaDon)
         {
             string sql = @"SELECT 
         ts.TenTraSua,

@@ -24,6 +24,7 @@ namespace QL_CuaHang.GUI
             DataTable dt = new DataTable();
             dt = MenuDAO.ThongTinTraSua();
             dgdanhsachtrasua.DataSource = dt;
+            MenuDAO.FormatDataGridView(dgdanhsachtrasua);
 
             dgdanhsachtrasua.Columns["MaTraSua"].Width = 80;
             dgdanhsachtrasua.Columns["TenTraSua"].Width = 200;
@@ -36,6 +37,7 @@ namespace QL_CuaHang.GUI
             DataTable dt = new DataTable();
             dt = MenuDAO.ThongTinTopping();
             dgdanhsachtopping.DataSource = dt;
+            MenuDAO.FormatDataGridView(dgdanhsachtopping);
         }
 
         private void DanhSachOrder()
@@ -60,6 +62,7 @@ namespace QL_CuaHang.GUI
             dgOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
         }
 
+        // Định dạng DataGripView
         private void Form_Menu_Load(object sender, EventArgs e)
         {
             DanhSachTraSua();
@@ -81,7 +84,7 @@ namespace QL_CuaHang.GUI
             dgOrder.Columns["TongGia"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("vi-VN");
 
 
-
+            // Phân loại tài khoản truy cập menuStrip
             string loaitk = Form_DangNhap.loaitk;
             if (loaitk == "nhanvien")
             {
@@ -312,6 +315,13 @@ namespace QL_CuaHang.GUI
         private void dgdanhsachtopping_MouseDown(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void đIỂMDANHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_DiemDanh formdiemDanh = new Form_DiemDanh();
+            formdiemDanh.TopMost = true;
+            formdiemDanh.ShowDialog();
         }
     }
 }

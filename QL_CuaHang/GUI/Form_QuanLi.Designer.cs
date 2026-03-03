@@ -46,6 +46,7 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tẠOTÀIKHOẢNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -61,8 +62,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.qUẢNLÍToolStripMenuItem,
             this.tHỐNGKÊDOANHTHUToolStripMenuItem,
-            this.hỆTHỐNGToolStripMenuItem,
-            this.đỒUỐNGToolStripMenuItem});
+            this.đỒUỐNGToolStripMenuItem,
+            this.hỆTHỐNGToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
@@ -89,7 +90,7 @@
             this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgdonhang1;
             this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Name = "qUẢNLÝĐƠNHÀNGToolStripMenuItem";
-            this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Size = new System.Drawing.Size(367, 34);
+            this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Size = new System.Drawing.Size(368, 34);
             this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Text = "QUẢN LÝ ĐƠN HÀNG";
             this.qUẢNLÝĐƠNHÀNGToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÝĐƠNHÀNGToolStripMenuItem_Click);
             // 
@@ -109,7 +110,7 @@
             this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgnhanvien1;
             this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Name = "qUẢNLÝNHÂNVIÊNToolStripMenuItem";
-            this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Size = new System.Drawing.Size(367, 34);
+            this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Size = new System.Drawing.Size(368, 34);
             this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Text = "QUẢN LÝ NHÂN VIÊN";
             this.qUẢNLÝNHÂNVIÊNToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÝNHÂNVIÊNToolStripMenuItem_Click);
             // 
@@ -138,7 +139,8 @@
             this.hỆTHỐNGToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.hỆTHỐNGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đĂNGNHẬPToolStripMenuItem,
-            this.đĂNGXUẤTToolStripMenuItem});
+            this.đĂNGXUẤTToolStripMenuItem,
+            this.tẠOTÀIKHOẢNToolStripMenuItem});
             this.hỆTHỐNGToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgHethong1;
             this.hỆTHỐNGToolStripMenuItem.Name = "hỆTHỐNGToolStripMenuItem";
             this.hỆTHỐNGToolStripMenuItem.Size = new System.Drawing.Size(185, 37);
@@ -150,7 +152,7 @@
             this.đĂNGNHẬPToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.đĂNGNHẬPToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgLogin1;
             this.đĂNGNHẬPToolStripMenuItem.Name = "đĂNGNHẬPToolStripMenuItem";
-            this.đĂNGNHẬPToolStripMenuItem.Size = new System.Drawing.Size(246, 34);
+            this.đĂNGNHẬPToolStripMenuItem.Size = new System.Drawing.Size(310, 38);
             this.đĂNGNHẬPToolStripMenuItem.Text = "ĐĂNG NHẬP";
             this.đĂNGNHẬPToolStripMenuItem.Click += new System.EventHandler(this.đĂNGNHẬPToolStripMenuItem_Click);
             // 
@@ -160,7 +162,7 @@
             this.đĂNGXUẤTToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.đĂNGXUẤTToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.imgDangXuat1;
             this.đĂNGXUẤTToolStripMenuItem.Name = "đĂNGXUẤTToolStripMenuItem";
-            this.đĂNGXUẤTToolStripMenuItem.Size = new System.Drawing.Size(246, 34);
+            this.đĂNGXUẤTToolStripMenuItem.Size = new System.Drawing.Size(310, 38);
             this.đĂNGXUẤTToolStripMenuItem.Text = "ĐĂNG XUẤT";
             this.đĂNGXUẤTToolStripMenuItem.Click += new System.EventHandler(this.đĂNGXUẤTToolStripMenuItem_Click);
             // 
@@ -255,6 +257,16 @@
             this.panel2.Size = new System.Drawing.Size(1256, 750);
             this.panel2.TabIndex = 0;
             // 
+            // tẠOTÀIKHOẢNToolStripMenuItem
+            // 
+            this.tẠOTÀIKHOẢNToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Image = global::QL_CuaHang.Properties.Resources.Add_icon1;
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Name = "tẠOTÀIKHOẢNToolStripMenuItem";
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Size = new System.Drawing.Size(287, 34);
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Text = "TẠO TÀI KHOẢN";
+            this.tẠOTÀIKHOẢNToolStripMenuItem.Click += new System.EventHandler(this.tẠOTÀIKHOẢNToolStripMenuItem_Click);
+            // 
             // Form_QuanLi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -303,5 +315,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem tẠOTÀIKHOẢNToolStripMenuItem;
     }
 }
